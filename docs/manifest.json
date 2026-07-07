@@ -1,7 +1,7 @@
 {
-  "name": "Time Wallet",
-  "short_name": "Time Wallet",
-  "description": "SNSに溶けた時間を「通貨」として見える化する自己管理アプリ",
+  "name": "Unscroll",
+  "short_name": "Unscroll",
+  "description": "SNSをやめずに、流されていた時間を写真と記録が残る毎日に変えるアプリ",
   "start_url": "./app.html",
   "scope": "./",
   "display": "standalone",

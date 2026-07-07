@@ -1,44 +1,18 @@
-const CACHE_NAME = 'timewallet-v19';
-const ASSETS = [
-  './app.html',
-  './manifest.json',
-  './icons/icon-192.png',
-  './icons/icon-512.png'
-];
-
-// Install: cache core assets
-self.addEventListener('install', e => {
-  e.waitUntil(
-    caches.open(CACHE_NAME)
-      .then(cache => cache.addAll(ASSETS))
-      .then(() => self.skipWaiting())
-  );
+// 旧「Time Wallet」PWA（Web体験版）の後始末用Service Worker（キルスイッチ）。
+// 体験版の提供は終了。旧バージョンをインストール済みの端末がオンラインで開くと、
+// このSWに更新される→全キャッシュを削除→自身を解除し、以後は通常のWebページとして配信される。
+// このファイル自体は、旧SWが更新チェックで取得するため残している（削除しない）。
+self.addEventListener('install', () => {
+  self.skipWaiting();
 });
 
-// Activate: clean old caches
-self.addEventListener('activate', e => {
-  e.waitUntil(
-    caches.keys().then(keys =>
-      Promise.all(keys.filter(k => k !== CACHE_NAME).map(k => caches.delete(k)))
-    ).then(() => self.clients.claim())
-  );
-});
-
-// Fetch: network-first, fallback to cache
-self.addEventListener('fetch', e => {
-  // Skip non-GET and cross-origin requests
-  if (e.request.method !== 'GET' || !e.request.url.startsWith(self.location.origin)) return;
-
-  e.respondWith(
-    fetch(e.request)
-      .then(res => {
-        // Cache successful responses
-        if (res.ok) {
-          const clone = res.clone();
-          caches.open(CACHE_NAME).then(cache => cache.put(e.request, clone));
-        }
-        return res;
-      })
-      .catch(() => caches.match(e.request))
-  );
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(k => caches.delete(k)));
+    await self.registration.unregister();
+    // 開いているページを再読み込みして、SW管理下から抜けた状態にする
+    const clients = await self.clients.matchAll({ type: 'window' });
+    clients.forEach(client => client.navigate(client.url));
+  })());
 });
