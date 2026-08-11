@@ -5,20 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Unscroll — 自分のために使えた時間が、数字と写真で残る。</title>
 
-<!-- ============================================================
-     Unscroll LP / 写真が主役・雑誌＝記憶の方向（2026-06-25 全面刷新）
-     方針: 明朝ディスプレイ＋墨×生成りの明暗リズム＋全画面写真。
-     写真は「SWAP」印のフィルム調プレースホルダーを実写真に差し替える。
-     ============================================================ -->
-
-<!-- SEO -->
-<meta name="description" content="Unscroll（アンスクロール）は、目的のないスクロールを自分の時間へ方向転換し、その時間と、その日の写真を残すiPhoneアプリ。年額プランは14日間無料。">
+<meta name="description" content="Unscroll（アンスクロール）は、目的のないスクロールを自分の時間へ方向転換し、その時間と、その日の写真を残すiPhoneアプリ。記録も、写真も、一日を人と持ち寄ることも、無料で始められます。">
 <meta name="theme-color" content="#14110d">
 
-<!-- iOS Safari：Appleの純正バナーからApp Storeへ -->
 <meta name="apple-itunes-app" content="app-id=6761459599">
 
-<!-- OGP -->
+<link rel="alternate" hreflang="ja" href="https://monyakaanyanya-stack.github.io/time-wallet/">
+<link rel="alternate" hreflang="en" href="https://monyakaanyanya-stack.github.io/time-wallet/index-en.html">
+<link rel="alternate" hreflang="x-default" href="https://monyakaanyanya-stack.github.io/time-wallet/">
+<meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="Unscroll — 今日が、残る。">
 <meta property="og:description" content="流れていた毎日を、残る人生に。自分の時間を計測して、その日の景色を写真で残す。">
 <meta property="og:type" content="website">
@@ -36,21 +31,21 @@
 *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 
 :root{
-  --ink:#14110d;          /* 墨（暖かい黒） */
-  --ink-2:#1c1813;        /* 少し明るい墨 */
-  --paper:#f4eee3;        /* 生成り（紙） */
-  --paper-2:#ece4d6;      /* 少し沈んだ紙 */
-  --cream-t:#f4eee3;      /* 暗面のテキスト */
+  --ink:#14110d;          
+  --ink-2:#1c1813;        
+  --paper:#f4eee3;        
+  --paper-2:#ece4d6;      
+  --cream-t:#f4eee3;      
   --cream-t2:rgba(244,238,227,.66);
   --cream-t3:rgba(244,238,227,.40);
-  --ink-t:#1d1812;        /* 明面のテキスト */
+  --ink-t:#1d1812;        
   --ink-t2:rgba(29,24,18,.64);
   --ink-t3:rgba(29,24,18,.42);
   --line-d:rgba(244,238,227,.14);
   --line-l:rgba(29,24,18,.13);
-  --green:#5f9c72;        /* 抑えた“生命”の緑（プラスの意味色） */
+  --green:#5f9c72;        
   --green-warm:#7fae84;
-  --gold:#c9a36a;         /* 暖色アクセント（紙・夕景に馴染む） */
+  --gold:#c9a36a;         
   --red:#c75f55;
   --ease:cubic-bezier(.16,1,.3,1);
   --maxw:1180px;
@@ -66,7 +61,6 @@ body{
 }
 ::selection{background:rgba(201,163,106,.3)}
 
-/* 全面フィルムグレイン（記憶・アナログの質感） */
 body::after{
   content:"";position:fixed;inset:0;z-index:9999;pointer-events:none;opacity:.05;mix-blend-mode:overlay;
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
@@ -77,14 +71,12 @@ a{color:inherit;text-decoration:none}
 .wrap{width:100%;max-width:var(--maxw);margin:0 auto;padding:0 28px}
 .narrow{max-width:760px}
 
-/* ---------- 明暗の面 ---------- */
 .s-ink{background:var(--ink);color:var(--cream-t)}
 .s-ink-2{background:var(--ink-2);color:var(--cream-t)}
 .s-paper{background:var(--paper);color:var(--ink-t)}
 .s-paper .muted{color:var(--ink-t2)} .s-paper .dim{color:var(--ink-t3)}
 .s-ink .muted,.s-ink-2 .muted{color:var(--cream-t2)} .s-ink .dim,.s-ink-2 .dim{color:var(--cream-t3)}
 
-/* ---------- タイポ ---------- */
 h1,h2,h3{font-family:var(--serif);font-weight:600;line-height:1.34;letter-spacing:.01em}
 .display{font-family:var(--serif);font-weight:600}
 h1{font-size:clamp(2rem,6.6vw,4.4rem);line-height:1.26;letter-spacing:.005em}
@@ -99,7 +91,6 @@ h3{font-size:clamp(1.2rem,2.6vw,1.55rem)}
 
 section{padding:clamp(86px,13vw,168px) 0;position:relative}
 
-/* ---------- ボタン ---------- */
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:.55em;
   font-family:var(--sans);font-weight:600;font-size:.95rem;letter-spacing:.02em;
@@ -115,7 +106,6 @@ section{padding:clamp(86px,13vw,168px) 0;position:relative}
 .cta-note{margin-top:18px;font-size:.86rem;line-height:1.85;color:var(--cream-t3)}
 .s-paper .cta-note{color:var(--ink-t3)}
 
-/* ---------- できること（ヒーロー直下の帯） ---------- */
 .band{padding:clamp(50px,7vw,82px) 0}
 .band .kicker{margin-bottom:22px}
 .band .items{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line-d)}
@@ -124,7 +114,6 @@ section{padding:clamp(86px,13vw,168px) 0;position:relative}
 .band .item h3{font-size:clamp(1.05rem,2.2vw,1.28rem);margin-bottom:11px}
 .band .item p{font-size:.96rem;line-height:1.9;color:var(--cream-t2);text-wrap:pretty}
 
-/* ---------- ヘッダー ---------- */
 header{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .4s,backdrop-filter .4s,border-color .4s;border-bottom:1px solid transparent}
 header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blur(16px);border-bottom-color:var(--line-d)}
 .nav{display:flex;align-items:center;justify-content:space-between;height:70px}
@@ -134,7 +123,6 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .nav-links a{transition:color .3s}.nav-links a:hover{color:var(--cream-t)}
 .nav .btn{padding:.62em 1.3em;font-size:.85rem}
 
-/* ---------- 写真（プレースホルダー：実写真に差し替え可） ---------- */
 .ph{position:relative;overflow:hidden;background-size:cover;background-position:center;
     box-shadow:inset 0 0 0 1px rgba(255,255,255,.04)}
 .ph::after{content:"";position:absolute;inset:0;opacity:.16;mix-blend-mode:overlay;
@@ -161,12 +149,10 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .scroll-cue .ln{width:1px;height:46px;background:linear-gradient(var(--cream-t3),transparent);animation:cue 2.4s var(--ease) infinite}
 @keyframes cue{0%{transform:scaleY(.2);transform-origin:top;opacity:0}40%{opacity:1}100%{transform:scaleY(1);transform-origin:top;opacity:0}}
 
-/* ---------- 大きな宣言（statement） ---------- */
 .statement{font-family:var(--serif);font-weight:600;font-size:clamp(1.9rem,5.6vw,3.6rem);line-height:1.5;letter-spacing:.01em;max-width:30ch;margin:0 auto}
 .statement .em{color:var(--green-warm)}
 .s-paper .statement .em{color:var(--green)}
 
-/* ---------- 2カラム（feature） ---------- */
 .split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,6vw,90px);align-items:center}
 .split.flip .col-text{order:2}
 .col-text h2{margin-bottom:22px}
@@ -174,7 +160,6 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .mini .row{display:flex;align-items:flex-start;gap:13px;font-size:1rem}
 .mini .row .mk{flex:0 0 auto;width:7px;height:7px;border-radius:50%;background:var(--green-warm);margin-top:11px}
 
-/* スマホ枠 */
 .phone{position:relative;width:100%;max-width:300px;margin:0 auto;border-radius:40px;
   background:linear-gradient(160deg,rgba(255,255,255,.14),rgba(255,255,255,.02));padding:0;
   box-shadow:0 50px 100px -34px rgba(0,0,0,.7),0 0 0 1px rgba(255,255,255,.05)}
@@ -184,7 +169,6 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .phone-pair .phone{margin:0;max-width:248px}
 .phone-pair .phone:nth-child(2){transform:translateY(30px)}
 
-/* ---------- ギャラリー（記憶の壁＝主役） ---------- */
 .gallery-grid{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:clamp(120px,13.5vw,188px);gap:10px;margin-top:60px}
 .gallery-grid .cell{border-radius:3px;position:relative}
 .gallery-grid .cell.tall{grid-row:span 2}
@@ -196,14 +180,16 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .privacy{margin-top:40px;display:inline-flex;align-items:center;gap:12px;font-size:.9rem;color:var(--cream-t2);border:1px solid var(--line-d);border-radius:999px;padding:11px 22px}
 .privacy .mk{width:7px;height:7px;border-radius:50%;background:var(--green-warm)}
 
-/* ---------- 利用者の声 ---------- */
-.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.6vw,46px);margin-top:58px;text-align:left}
-.voice{border-top:1px solid var(--line-l);padding-top:26px}
+/* 6列にして1枚=2列ぶん＝上段3枚。列幅は3列指定のときと同じになる（(W-2g)/3）。
+   5枚目以降は下段に落ちるので、4枚目を2列目から始めて**下段の2枚を中央に**そろえる。 */
+.voices{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(24px,3.6vw,46px);margin-top:58px;text-align:left}
+.voice{grid-column:span 2;border-top:1px solid var(--line-l);padding-top:26px}
+.voice:nth-child(4){grid-column:2/span 2}
 .s-ink .voice,.s-ink-2 .voice{border-top-color:var(--line-d)}
 .voice blockquote{font-family:var(--serif);font-weight:600;font-size:1.06rem;line-height:1.9;text-wrap:balance}
-/* 見出しは句の切れ目でだけ改行する（語中で割れるのを防ぐ） */
+
 .voice blockquote span{display:inline-block;white-space:nowrap}
-/* 極端に狭い端末（〜359px）では句が入りきらないので、通常の折り返しに戻す */
+
 @media(max-width:359px){.voice blockquote span{display:inline;white-space:normal}}
 .voice .body{margin-top:14px;font-size:.95rem;line-height:1.95;color:var(--ink-t2);text-wrap:pretty}
 .s-ink .voice .body,.s-ink-2 .voice .body{color:var(--cream-t2)}
@@ -212,16 +198,16 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .voices-note{margin:44px auto 0;max-width:60ch;font-size:.84rem;line-height:1.9;color:var(--ink-t3);text-wrap:pretty}
 .s-ink .voices-note,.s-ink-2 .voices-note{color:var(--cream-t3)}
 
-/* ---------- ステップ ---------- */
 .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:64px;border-top:1px solid var(--line-l)}
 .s-ink .steps,.s-ink-2 .steps{border-top-color:var(--line-d)}
 .step{padding:40px 34px 40px 0;border-right:1px solid var(--line-l)}
 .s-ink .step,.s-ink-2 .step{border-right-color:var(--line-d)}
 .step:last-child{border-right:0;padding-right:0}
+/* 2枚目以降は左にも余白を取る＝仕切り線と見出しがくっつかないように（左右対称の34px） */
+.step + .step{padding-left:34px}
 .step .no{font-family:var(--display);font-size:1.05rem;letter-spacing:.1em;color:var(--gold);display:block;margin-bottom:22px}
 .step h3{margin-bottom:12px}.step p{font-size:.98rem;line-height:1.9}
 
-/* ---------- 時間計算 ---------- */
 .calc-card{border:1px solid var(--line-d);border-radius:6px;padding:clamp(28px,5vw,44px);max-width:660px;margin:56px auto 0;background:rgba(244,238,227,.025)}
 .calc-inputs{display:grid;grid-template-columns:1fr 1fr;gap:20px}
 .calc-field{display:flex;flex-direction:column;gap:11px}
@@ -241,7 +227,6 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .calc-line .accent{color:var(--gold);font-weight:600}
 .calc-note{margin-top:24px;font-size:.85rem;color:var(--cream-t3);text-align:center}
 
-/* ---------- 比較 ---------- */
 .compare{display:grid;grid-template-columns:1fr 1fr;gap:22px;margin-top:60px}
 .col{border:1px solid var(--line-l);border-radius:6px;padding:34px 30px}
 .s-ink .col,.s-ink-2 .col{border-color:var(--line-d)}
@@ -259,7 +244,6 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .s-ink .them li .mk,.s-ink-2 .them li .mk{background:rgba(244,238,227,.08);color:var(--cream-t3)}
 .us li .mk{background:rgba(95,156,114,.18);color:var(--green)}
 
-/* ---------- Origin（開発背景・一人称） ---------- */
 .origin{position:relative}
 .origin .ph{position:absolute;inset:0}
 .origin .veil{position:absolute;inset:0;background:linear-gradient(110deg,rgba(20,17,13,.94) 0%,rgba(20,17,13,.82) 45%,rgba(20,17,13,.5) 100%)}
@@ -267,7 +251,6 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .origin .prose{font-family:var(--serif);font-size:clamp(1.05rem,2.2vw,1.32rem);line-height:2.2;color:var(--cream-t)}
 .origin .sign{margin-top:34px;font-family:var(--display);font-size:.95rem;color:var(--cream-t2);letter-spacing:.04em}
 
-/* ---------- 共有（1か月を一枚に） ---------- */
 .collage{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;border-radius:6px;overflow:hidden;max-width:460px;margin:0 auto;padding:26px;background:var(--ink-2)}
 .collage .ph{aspect-ratio:1;border-radius:3px}
 .collage .title{grid-column:1/-1;text-align:center;font-family:var(--display);font-size:1.3rem;letter-spacing:.12em;color:var(--cream-t);margin-bottom:4px}
@@ -284,7 +267,6 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .final h2{font-size:clamp(2rem,5.6vw,3.4rem);margin-bottom:30px}
 .final .cta-row{justify-content:center}
 
-/* ---------- 料金・FAQ・QR（最終CTA内） ---------- */
 .price{max-width:48ch;margin:0 auto 32px;font-size:1.02rem;line-height:2;color:var(--cream-t2)}
 .price b{color:var(--cream-t);font-weight:600}
 .price .fine{display:block;margin-top:10px;font-size:.85rem;line-height:1.85;color:var(--cream-t3);text-wrap:pretty}
@@ -304,17 +286,15 @@ footer{background:var(--ink);border-top:1px solid var(--line-d);padding:54px 0}
 .foot .links a:hover{color:var(--cream-t)}
 
 /* ---------- reveal ---------- */
+.nb{white-space:nowrap}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .d1{transition-delay:.06s}.d2{transition-delay:.16s}.d3{transition-delay:.26s}.d4{transition-delay:.36s}
 
-/* ---------- レスポンシブ ---------- */
-/* 端数の行（最後に1〜2文字だけ残る行）を防ぐ */
 h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 .lead,.prose,.mini .row div,.step p,.band .item p,.col li,.price,.calc-note,.calc-line,
 .use-note,.voices-note,.cta-note,.privacy,.qr .t,.faq .a,.voice .body,.sign{text-wrap:pretty}
 
-/* 句読点を外した見出しを、スマホでも1〜2行に収める（3行に割れるのを防ぐ） */
 @media(max-width:420px){
   h1{font-size:1.75rem}
   h2{font-size:1.55rem}
@@ -324,13 +304,12 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   h1{font-size:1.45rem}
   h2{font-size:1.35rem}
   .statement{font-size:1.45rem}
-  /* 1行に入る文字数を確保して、端数の行が出ないようにする */
+  
   .lead{font-size:.93rem}
   .prose{font-size:.94rem}
   .band .item p,.step p,.mini .row div,.col li,.faq .a,.voice .body,.price{font-size:.89rem}
 }
 
-/* 画面の高さが低い端末（iPhone SE 等）：ヒーローのCTAと注記を折り返し内に収める */
 @media(max-height:700px){
   .hero h1{margin-bottom:20px}
   .hero .lead{margin-bottom:24px;font-size:.98rem;line-height:1.8}
@@ -338,7 +317,7 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   .hero .cta-note{margin-top:12px}
   .hero-inner{padding-bottom:36px;padding-top:84px}
 }
-/* QRはPC表示のみ（スマホは押せば済むので出さない） */
+
 @media(min-width:900px){
   .qr{display:inline-flex;align-items:center;gap:20px;margin:46px auto 0;
       border:1px solid var(--line-d);border-radius:4px;padding:16px 24px 16px 16px;
@@ -353,17 +332,19 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   .band .item{border-right:0;border-bottom:1px solid var(--line-d);padding:26px 0}
   .band .item:last-child{border-bottom:0;padding-bottom:0}
   .voices{grid-template-columns:1fr;gap:34px}
+  .voice,.voice:nth-child(4){grid-column:auto}   /* 縦に5枚つなげる */
   .scroll-cue{display:none}
   .split,.compare{grid-template-columns:1fr;gap:44px}
   .split.flip .col-text{order:0}
   .steps{grid-template-columns:1fr}
   .step{border-right:0;border-bottom:1px solid var(--line-l);padding:30px 0}
+  .step + .step{padding-left:0}   /* 縦積みでは仕切りが横線になるので左余白は戻す */
   .s-ink .step,.s-ink-2 .step{border-bottom-color:var(--line-d)}
   .step:last-child{border-bottom:0}
   .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:44vw}
   .calc-inputs{grid-template-columns:1fr}
   .phone-pair .phone:nth-child(2){transform:none}
-  /* フッター：縦積み＋リンクは単語ごとに折り返す（文字単位の改行崩れを防ぐ） */
+  
   .foot{flex-direction:column;align-items:flex-start;gap:18px}
   .foot .links{flex-wrap:wrap;gap:12px 18px}
   .foot .links a{white-space:nowrap}
@@ -372,38 +353,37 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 </head>
 <body>
 
-<!-- ===================== Header ===================== -->
 <header id="hdr">
   <div class="wrap nav">
     <div class="brand"><span class="mk"></span>Unscroll</div>
     <nav class="nav-links">
       <a href="#gallery">見えた景色</a>
+      <a href="#together">持ち寄る</a>
       <a href="#how">使い方</a>
       <a href="#passbook">人生の通帳</a>
       <a href="#why">なぜ</a>
+      <a href="index-en.html" lang="en" hreflang="en">English</a>
     </nav>
     <a href="https://apps.apple.com/app/id6761459599" class="btn btn-line" target="_blank" rel="noopener">App Store</a>
   </div>
 </header>
 
-<!-- ===================== 1. Hero ===================== -->
 <section class="hero">
   <div class="ph ph-dawn" style="background-image:url(lp-assets/life-hero.jpg)"></div>
   <div class="hero-veil"></div>
   <div class="wrap hero-inner">
     <span class="kicker reveal d1">Unscroll</span>
     <h1 class="reveal d2">スクロールしてたら<br>見れなかった景色がある</h1>
-    <p class="lead reveal d3">自分のために使えた時間が、<span class="green">数字</span>と<span class="green">写真</span>で残る。<br>SNSはやめなくていい。目的のないスクロールだけ、<span style="white-space:nowrap">自分の時間へ。</span><br><span style="color:var(--cream-t2)">流れてくる「いい」ではなく、<span style="white-space:nowrap">自分が「いい」と思った今日を。</span></span></p>
+    <p class="lead reveal d3"><span class="nb">自分のために使えた時間が、</span><span class="nb"><span class="green">数字</span>と<span class="green">写真</span>で残る。</span><br><span class="nb">SNSはやめなくていい。</span><br><span class="nb">目的のないスクロールだけ、</span><span style="white-space:nowrap"><span class="nb">自分の時間へ。</span></span><span style="color:var(--cream-t2)"><span class="nb">流れてくる「いい」ではなく、</span><span style="white-space:nowrap"><span class="nb">自分が「いい」と思った今日を。</span></span></span></p>
     <div class="cta-row reveal d4">
       <a href="https://apps.apple.com/app/id6761459599" class="btn btn-primary" target="_blank" rel="noopener">App Storeでダウンロード</a>
       <a href="https://discord.gg/Dsd9bjJuYy" class="btn btn-line" target="_blank" rel="noopener">Discord コミュニティ</a>
     </div>
-    <p class="cta-note reveal d4">iPhone / iOS 17以降・年額プランは14日間無料</p>
+    <p class="cta-note reveal d4">iPhone / iOS 17以降・無料で始められます</p>
   </div>
   <div class="scroll-cue"><span>Scroll</span><span class="ln"></span></div>
 </section>
 
-<!-- ===================== 1.5 できること（初見の理解速度用・薄い帯） ===================== -->
 <section class="s-ink-2 band" id="what">
   <div class="wrap">
     <span class="kicker reveal d1">What you get</span>
@@ -424,25 +404,23 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   </div>
 </section>
 
-<!-- ===================== 2. 問題提起 ===================== -->
 <section class="s-paper center">
   <div class="wrap">
     <h2 class="statement reveal d1">見ていた<span class="em">時間</span>は残る<br>見ていた<span class="em">内容</span>は残らない</h2>
-    <p class="prose muted reveal d2" style="margin-top:36px">気づいたら一日が終わっている。あの一週間、何をしていたか思い出せない。<br>指を動かしていた時間だけではありません。なんとなく流れに乗っていた時間も、同じように消えていきます。<br>失っているのは時間そのものより、<b>覚えていられたはずの毎日</b>かもしれない。</p>
+    <p class="prose muted reveal d2" style="margin-top:36px"><span class="nb">気づいたら一日が終わっている。</span><br><span class="nb">あの一週間、</span><span class="nb">何をしていたか思い出せない。</span><br><span class="nb">指を動かしていた時間だけでは</span><span class="nb">ありません。</span><br><span class="nb">なんとなく流れに</span><span class="nb">乗っていた時間も、</span><span class="nb">同じように消えていきます。</span><br><span class="nb">失っているのは時間そのものより、</span><b><span class="nb">覚えていられたはずの毎日</span></b><span class="nb">かもしれない。</span></p>
   </div>
 </section>
 
-<!-- ===================== 3. Unscrollの独自価値 ===================== -->
 <section class="s-ink">
   <div class="wrap split">
     <div class="col-text">
       <span class="kicker reveal d1">What it is</span>
       <h2 class="reveal d1">時間だけでも<br>写真だけでもない</h2>
-      <p class="lead muted reveal d2">SNSは1日の予算の中で付き合う。禁止でも我慢でもなく、方向転換。<br>そして、心を向けたその時間に撮れた一枚が、記録として積み上がる。</p>
+      <p class="lead muted reveal d2"><span class="nb">SNSは1日の予算の中で</span><span class="nb">付き合う。</span><br><span class="nb">禁止でも我慢でもなく、</span><span class="nb">方向転換。</span><br><span class="nb">そして、</span><span class="nb">心を向けたその時間に</span><span class="nb">撮れた一枚が、</span><span class="nb">記録として積み上がる。</span></p>
       <div class="mini reveal d3">
-        <div class="row"><span class="mk"></span><div>SNSに使った時間と、自分のために過ごした時間がひと目。予算を超えたら、そっと自分の時間へ。</div></div>
-        <div class="row"><span class="mk"></span><div>心を向けた時間が、写真の裏側にそっと記録される。</div></div>
-        <div class="row"><span class="mk"></span><div>「止める」のではなく「動かす」。開きたくなった衝動を、自分で選んだ時間の入口に変える。</div></div>
+        <div class="row"><span class="mk"></span><div><span class="nb">SNSに使った時間と、</span><span class="nb">自分のために過ごした時間がひと</span><span class="nb">目。</span><br><span class="nb">予算を超えたら、</span><span class="nb">そっと自分の時間へ。</span></div></div>
+        <div class="row"><span class="mk"></span><div><span class="nb">心を向けた時間が、</span><span class="nb">写真の裏側にそっと記録される。</span></div></div>
+        <div class="row"><span class="mk"></span><div><span class="nb">「止める」のではなく「動かす」。</span><br><span class="nb">開きたくなった衝動を、</span><span class="nb">自分で選んだ時間の入口に変える。</span></div></div>
       </div>
     </div>
     <div class="col-img reveal d2">
@@ -451,14 +429,13 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   </div>
 </section>
 
-<!-- ===================== 4. 見えた景色（ギャラリー＝主役） ===================== -->
 <section class="s-ink-2 center" id="gallery">
   <div class="wrap">
     <span class="kicker reveal d1">The view you reclaim</span>
     <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">誰にも見られない<br>だから<span class="green">自分のために</span>残せる</h2>
-    <p class="prose muted reveal d2" style="margin-top:30px">映える必要も、上手に撮る必要もありません。自分が「いい」と思ったから残す。<br>その一枚が、通帳のように貯まっていきます。<br>誰かに見せるためじゃない。あとで自分が思い出すために。</p>
+    <p class="prose muted reveal d2" style="margin-top:30px"><span class="nb">映える必要も、</span><span class="nb">上手に撮る必要もありません。</span><br><span class="nb">自分が「いい」と思ったから残す。</span><br><span class="nb">その一枚が、</span><span class="nb">通帳のように貯まっていきます。</span><br><span class="nb">誰かに見せるためじゃない。</span><br><span class="nb">あとで自分が思い出すために。</span></p>
 
-    <!-- SWAP: 各セルを実写真に。写真がある日＝覚えている日、空セル＝思い出せない日。 -->
+    
     <div class="gallery-grid reveal d2">
       <div class="cell ph ph-window" style="background-image:url(lp-assets/life-window.jpg)"><span class="cap">朝の光</span></div>
       <div class="cell tall ph ph-forest" style="background-image:url(lp-assets/life-forest.jpg)"><span class="cap">市場通りを歩いた</span></div>
@@ -477,7 +454,16 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   </div>
 </section>
 
-<!-- ===================== 5. 使い方 ===================== -->
+<section class="s-paper center" id="together">
+  <div class="wrap">
+    <span class="kicker reveal d1">Keep a day together</span>
+    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">写真は分け合う<br><span class="green">記憶</span>は、自分のもの</h2>
+    <p class="prose muted reveal d2" style="margin-top:30px"><span class="nb">カレンダーの一日に、</span><span class="nb">一緒に過ごした人を招けます。</span><br><span class="nb">それぞれが自分の9枚を</span><span class="nb">持ち寄って、</span><span class="nb">同じ一日を人数分の視点で</span><span class="nb">残せます。</span></p>
+    <p class="prose reveal d3" style="margin-top:30px"><b><span class="nb">通知も、</span><span class="nb">バッジも、</span><span class="nb">「新着」もありません。</span></b><span class="nb">次に開いたとき、</span><span class="nb">そこにあるだけです。</span></p>
+    <span class="privacy reveal d3"><span class="mk"></span>持ち寄った写真はAppleのiCloudを通じて相手に届きます。開発者はその中身を見られません</span>
+  </div>
+</section>
+
 <section class="s-paper" id="how">
   <div class="wrap center">
     <span class="kicker reveal d1">How it works</span>
@@ -492,16 +478,15 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   </div>
 </section>
 
-<!-- ===================== 6. 人生の通帳・レポート ===================== -->
 <section class="s-ink" id="passbook">
   <div class="wrap split flip">
     <div class="col-text">
       <span class="kicker reveal d1">Your passbook</span>
       <h2 class="reveal d1">時間と記憶が<br><span class="green">同じ場所</span>に積み上がる</h2>
-      <p class="lead muted reveal d2">日々の記録と、その日の一枚。数字と記憶が同じ通帳に並ぶから、自分のために過ごした時間が実感に変わる。日・週・月・年でふりかえれば、自分の変化が見えてくる。</p>
+      <p class="lead muted reveal d2"><span class="nb">日々の記録と、</span><span class="nb">その日の一枚。</span><br><span class="nb">数字と記憶が同じ通帳に並ぶから、</span><span class="nb">自分のために過ごした時間が実感に</span><span class="nb">変わる。</span><br><span class="nb">日・週・月・年でふりかえれば、</span><span class="nb">自分の変化が見えてくる。</span></p>
       <div class="mini reveal d3">
-        <div class="row"><span class="mk"></span><div>写真カレンダーで、覚えている日が一目でわかる。</div></div>
-        <div class="row"><span class="mk"></span><div>週間・月間レポートで、自分のために使った時間の変化を可視化。</div></div>
+        <div class="row"><span class="mk"></span><div><span class="nb">写真カレンダーで、</span><span class="nb">覚えている日が一目でわかる。</span></div></div>
+        <div class="row"><span class="mk"></span><div><span class="nb">週間・月間レポートで、</span><span class="nb">自分のために使った時間の変化を</span><span class="nb">可視化。</span></div></div>
       </div>
     </div>
     <div class="col-img reveal d2">
@@ -513,25 +498,11 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   </div>
 </section>
 
-<!-- ===================== 6.5 利用者の声 =====================
-     掲載許可：3名とも取得済み（2026-07-30）。本人から届いた感想を、
-     読みやすさのために要約・編集したもの（意味は変えない）。
-
-     ▼ あとから触るとき
-       - <cite> は本人希望の表示名に差し替え可（匿名・イニシャル・年代のみ でも可）
-       - 未承認の感想を試しに置くときは、その .voice に data-draft="true" を付ける
-         → コンソール警告が出て、docs/scripts/check-lp-publish.sh が公開を止める
-       - 末尾の「要約・編集／個人差」注記は常に残す
-
-     ※ 3名とも「SNSが何時間減ったか」ではなく、その先の生活の変化を語っている。
-        1件目＝暮らしの変化 / 2件目＝気づきと窮屈さのなさ / 3件目＝続くこと・時間と写真。
-        入れ替えるときも、この3つの役割が重ならないようにする。
-     ========================================================== -->
 <section class="s-paper center" id="voices">
   <div class="wrap">
     <span class="kicker reveal d1">What changed</span>
-    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">使っている人に<br><span class="green">起きていること</span></h2>
-    <p class="prose muted reveal d2" style="margin-top:28px">SNSの時間が何時間減ったか、ではなく。</p>
+    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto"><span class="green">利用者の声</span></h2>
+    <p class="prose muted reveal d2" style="margin-top:28px"><span class="nb">SNSの時間が何時間減ったか、</span><span class="nb">ではなく。</span></p>
 
     <div class="voices reveal d2">
       <div class="voice">
@@ -549,23 +520,32 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
         <p class="body">以前ためしたポモドーロタイマーは続きませんでしたが、これは自分に使えた時間が積み上がるのが一目で分かるので続いています。時間の記録と写真の記録を一緒に残せるので、写真を撮るのが好きな人にも合いそうです。</p>
         <cite>— 継続してお使いの方</cite>
       </div>
+      <div class="voice">
+        <blockquote><span>スマホを閉じて、</span><span>娘と過ごす時間が増えました。</span></blockquote>
+        <p class="body">娘のほうが理解が早くて、SNSを開いても5分で「この子💀が出てきたから」と自分でスマホを閉じています。そのあとは2人でお茶をしたり、娘の好きな制作をしたり。このやりとりが良いみたいで、親子関係がすごく良くなっている気がします。</p>
+        <cite>— 娘さんと使っている方</cite>
+      </div>
+      <div class="voice">
+        <blockquote><span>誰かが作った写真ではなく、</span><span>自分たちで撮った写真で</span><span>盛り上がっています。</span></blockquote>
+        <p class="body">10年ほど前から「その場の空気を目に焼き付けたい」と思って、あまり写真を撮らなくなっていました。使い始めてから日常の写真を撮る機会がかなり増えて、娘と一緒に撮ったり、猫の撮ったことのない姿を撮ったり。「手はこっち！」「もっとこう！」と2人で騒ぎながら撮っています。</p>
+        <cite>— 同じ方から、後日</cite>
+      </div>
     </div>
 
     <p class="voices-note reveal d3">※ 掲載は本人の許可を得た感想です。読みやすさのため要約・編集しています。<span style="white-space:nowrap">感じ方には個人差があります。</span></p>
 
-    <p class="prose muted reveal d3" style="margin-top:40px">一人ひとりの結果はちがいます。まずは14日間、<span style="white-space:nowrap">あなたの毎日で。</span></p>
+    <p class="prose muted reveal d3" style="margin-top:40px"><span class="nb">一人ひとりの結果はちがいます。</span><br><span class="nb">まずは無料で、</span><span style="white-space:nowrap"><span class="nb">あなたの毎日で。</span></span></p>
     <div class="cta-row reveal d3" style="justify-content:center;margin-top:22px">
       <a href="https://apps.apple.com/app/id6761459599" class="btn btn-primary" target="_blank" rel="noopener">App Storeでダウンロード</a>
     </div>
-    <p class="cta-note reveal d3">iPhone / iOS 17以降・年額プランは14日間無料</p>
+    <p class="cta-note reveal d3">iPhone / iOS 17以降・無料で始められます</p>
   </div>
 </section>
 
-<!-- ===================== 7. 1か月を一枚に（共有） ===================== -->
 <section class="s-paper" id="share">
   <div class="wrap split">
     <div class="col-img reveal d1">
-      <!-- SWAP: 実際の月コラージュ画像に差し替え -->
+      
       <div class="collage">
         <div class="title"><span id="collage-title">6月の日記</span></div>
         <div class="ph rand"></div><div class="ph rand"></div><div class="ph rand"></div>
@@ -577,18 +557,17 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
     <div class="col-text">
       <span class="kicker reveal d1">One month, one frame</span>
       <h2 class="reveal d1">毎日は自分のために<br>1か月は一枚の<span class="green">記録</span>に</h2>
-      <p class="lead muted reveal d2">その月に貯めた一枚一枚が、自動で一枚のコラージュに。勉強の記録でも、読み切った本でも、つくっていたものでも、誰かとの思い出でも——<span class="green">その1か月をどう過ごすかは、あなた次第</span>。タイトルも、自分の言葉で。</p>
+      <p class="lead muted reveal d2"><span class="nb">その月に貯めた一枚一枚が、</span><span class="nb">自動で一枚のコラージュに。</span><br><span class="nb">勉強の記録でも、</span><span class="nb">読み切った本でも、</span><span class="nb">つくっていたものでも、</span><span class="nb">誰かとの思い出でも——</span><span class="green"><span class="nb">その1か月をどう過ごすかは、</span><span class="nb">あなた次第</span></span><span class="nb">。</span><br><span class="nb">タイトルも、</span><span class="nb">自分の言葉で。</span></p>
       <p class="use-note reveal d3">※ コラージュのタイトル編集はご契約中に使える機能です。写真は端末の中に残り、共有するかはあなたが選びます。</p>
     </div>
   </div>
 </section>
 
-<!-- ===================== 8. あなたの時間は、1年で何日分？ ===================== -->
 <section class="s-ink-2" id="calc">
   <div class="wrap center">
     <span class="kicker reveal d1">Where your time goes</span>
     <h2 class="reveal d1" style="max-width:32ch;margin:0 auto">その時間は1年で<span class="green">何日分</span>？</h2>
-    <p class="prose muted reveal d2" style="margin-top:28px">1日のSNS時間を入れてみてください。<br>1週間・1か月・1年で、どれだけの時間になるかが見えます。</p>
+    <p class="prose muted reveal d2" style="margin-top:28px"><span class="nb">1日のSNS時間を</span><span class="nb">入れてみてください。</span><br><span class="nb">1週間・1か月・1年で、</span><span class="nb">どれだけの時間になるかが</span><span class="nb">見えます。</span></p>
   </div>
   <div class="wrap">
     <div class="calc-card reveal d2">
@@ -614,7 +593,6 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   </div>
 </section>
 
-<!-- ===================== 9. 他の制限アプリとの違い ===================== -->
 <section class="s-paper" id="compare">
   <div class="wrap center">
     <span class="kicker reveal d1">Not just blocking</span>
@@ -644,7 +622,6 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   </div>
 </section>
 
-<!-- ===================== 10. 開発背景（Why・一人称） ===================== -->
 <section class="origin" id="why">
   <div class="ph ph-dusk" style="background-image:url(lp-assets/life-quiet.jpg)"></div>
   <div class="veil"></div>
@@ -662,28 +639,27 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   </div>
 </section>
 
-<!-- ===================== 11. 最後のCTA ===================== -->
 <section class="final" id="get">
   <div class="ph ph-dawn" style="background-image:url(lp-assets/life-morning.jpg)"></div>
   <div class="veil"></div>
   <div class="wrap inner center">
-    <h2 class="reveal d1">今日が、<span class="green">残る</span>。</h2>
-    <p class="lead muted reveal d2" style="margin:0 auto 30px">目的のないスクロールだけを、<span style="white-space:nowrap">自分で選んだ時間へ。</span><br>その時間に過ごしたことは、写真と記録として残ります。</p>
-    <p class="price reveal d2"><b>年額プランは14日間無料。</b><span style="white-space:nowrap">その後 ¥5,980/年</span><span style="white-space:nowrap">（月額 ¥880）。</span>
-      <span class="fine">iPhone / iOS 17以降・日本語と英語に対応。<br>いつでも解約でき、<span style="white-space:nowrap">解約しても記録は消えません。</span></span></p>
+    <h2 class="reveal d1">今日が<span class="green">残る</span>。</h2>
+    <p class="lead muted reveal d2" style="margin:0 auto 30px"><span class="nb">目的のないスクロールだけを、</span><span style="white-space:nowrap"><span class="nb">自分で選んだ時間へ。</span></span><span class="nb">その時間に過ごしたことは、</span><span class="nb">写真と記録として残ります。</span></p>
+    <p class="price reveal d2"><b>無料で始められます。</b><br><b><span class="nb">記録も写真も、</span><span class="nb">一日を人と</span><span class="nb">持ち寄ることも</span></b>
+      <span class="fine">SNS全体の保護（複数のアプリをまとめて）と、すべての期間の振り返りは<span style="white-space:nowrap">Premium（¥5,980/年・月額 ¥880）。</span><br>年額プランには14日間の無料期間があります。<br>iPhone / iOS 17以降・日本語と英語に対応。<span style="white-space:nowrap">解約しても記録は消えません。</span></span></p>
     <div class="cta-row reveal d3">
       <a class="btn btn-primary" href="https://apps.apple.com/app/id6761459599" target="_blank" rel="noopener">App Storeでダウンロード</a>
-      <!-- ▼▼▼ Discordサーバーの招待リンク（discord.gg/xxxx）に差し替える。差し替えるまでボタンは無効。 ▼▼▼ -->
+      
       <a id="discord-cta" class="btn btn-line" href="https://discord.gg/Dsd9bjJuYy" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="flex-shrink:0">
           <path d="M20.317 4.369A19.79 19.79 0 0 0 15.432 3a13.6 13.6 0 0 0-.617 1.27 18.27 18.27 0 0 0-5.633 0A13.2 13.2 0 0 0 8.565 3 19.74 19.74 0 0 0 3.677 4.37C.533 9.046-.32 13.605.105 18.1a19.9 19.9 0 0 0 6.073 3.058c.488-.665.922-1.37 1.296-2.111a12.94 12.94 0 0 1-2.04-.978c.171-.125.338-.255.5-.387a14.22 14.22 0 0 0 12.132 0c.164.135.331.265.5.387-.652.382-1.336.71-2.045.98.375.74.81 1.444 1.297 2.11a19.84 19.84 0 0 0 6.076-3.058c.5-5.21-.838-9.728-3.495-13.732ZM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.42 2.157-2.42 1.21 0 2.176 1.096 2.157 2.42 0 1.334-.955 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.42 2.157-2.42 1.21 0 2.176 1.096 2.157 2.42 0 1.334-.946 2.419-2.157 2.419Z"/>
         </svg>Discord コミュニティに参加
       </a>
-      <!-- ▲▲▲ -->
+      
     </div>
     <p class="cta-note reveal d3">使い方の相談や要望、開発の様子はコミュニティで。参加は無料・いつでも退出できます。</p>
 
-    <!-- PC表示のみ：iPhone専用アプリなので、PCで見ている人の受け皿 -->
+    
     <div class="qr reveal d3">
       <img src="lp-assets/qr-appstore.svg" alt="App StoreのUnscrollのページを開くQRコード" width="176" height="176" loading="lazy">
       <span class="t">PCでご覧の方は、iPhoneのカメラで読み取ってください。<small>iPhone 専用アプリです。</small></span>
@@ -700,22 +676,26 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
       </details>
       <details>
         <summary>写真や記録はどこに保存されますか？</summary>
-        <p class="a">端末の中と、あなた自身のiCloudだけです。開発者のサーバーには送られません。書き出すかどうか、共有するかどうかも、あなたが選びます。</p>
+        <p class="a">端末の中と、あなた自身のiCloudだけです。開発者のサーバーには送られません。書き出すかどうかも、誰かと持ち寄るかどうかも、あなたが選びます。持ち寄った写真もAppleのiCloudを通って相手に届くだけで、開発者はその中身を見られません。</p>
       </details>
       <details>
-        <summary>無料で試せますか？</summary>
-        <p class="a">年額プランに14日間の無料期間があります。期間中は全機能を使えます。解約しても、それまでの記録と写真は消えません。</p>
+        <summary>無料でどこまで使えますか？</summary>
+        <p class="a">写真も、一言も、自分の時間の記録も、月のまとめも、一日を人と持ち寄ることも、契約なしで使えます。SNSのブロックは、いちばん時間を使っているアプリ1つから。複数のアプリをまとめて守ることと、すべての期間の振り返りがPremiumです。年額プランには14日間の無料期間があります。解約しても、それまでの記録と写真は消えません。</p>
+      </details>
+      <details>
+        <summary>「持ち寄る」は、相手にどこまで見えますか？</summary>
+        <p class="a">その日に持ち寄った写真と、写真に添えた一言だけです。通帳のその日に書いたひとこと、お気に入り、記録した時間、ほかの日のことは相手に見えません。相手の写真もあなたの通帳には入らず、カレンダーに出るのはいつも自分の写真だけです。やめても、それまでに持ち寄った写真はお互いの手元に残ります。</p>
       </details>
     </div>
   </div>
 </section>
 
-<!-- ===================== Footer ===================== -->
 <footer>
   <div class="wrap foot">
     <div class="brand"><span class="mk"></span>Unscroll</div>
     <div class="links">
       <a href="#gallery">見えた景色</a>
+      <a href="#together">持ち寄る</a>
       <a href="#how">使い方</a>
       <a href="#passbook">人生の通帳</a>
       <a href="https://apps.apple.com/app/id6761459599" target="_blank" rel="noopener">ダウンロード</a>
@@ -727,7 +707,6 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 </footer>
 
 <script>
-// --- ランダム写真：アクセスのたびにプールからシャッフルして .rand 枠へ ---
 (function(){
   var N=71, pool=[];
   for(var i=1;i<=N;i++){ pool.push('lp-assets/pool/p'+(i<10?'0'+i:i)+'.jpg'); }
@@ -736,14 +715,12 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   for(var c=0;c<cells.length;c++){ cells[c].style.backgroundImage='url('+pool[c % pool.length]+')'; }
 })();
 
-// --- ヘッダー：スクロールで背景を出す ---
 (function(){
   var h=document.getElementById('hdr');
   function on(){ h.classList.toggle('scrolled', window.scrollY>40); }
   window.addEventListener('scroll',on,{passive:true}); on();
 })();
 
-// --- 時間パーソナライズ（1日のSNS時間 → 週/月/年/日数） ---
 (function(){
   var inp=document.getElementById('snsh');
   if(!inp)return;
@@ -762,7 +739,6 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   inp.addEventListener('input',calc); calc();
 })();
 
-// --- コラージュのタイトル例をフェードで切り替え（使い方は人それぞれ、を見せる） ---
 (function(){
   var el=document.getElementById('collage-title');
   if(!el)return;
@@ -775,11 +751,9 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   },2800);
 })();
 
-// --- Discord 招待ボタン ---
 (function(){
   var a=document.getElementById('discord-cta');
   if(!a)return;
-  // 招待リンク未設定（プレースホルダのまま）なら、誤って空リンクを公開しないよう無効化する。
   if(a.getAttribute('href')==='DISCORD_INVITE_URL'){
     a.addEventListener('click',function(e){ e.preventDefault(); });
     a.style.opacity='.5'; a.style.cursor='not-allowed';
@@ -787,18 +761,13 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   }
 })();
 
-// --- 利用者の声：仮文言（data-draft）が残っていないかの自己チェック ---
-// 表示には一切影響しない。掲載許可を得て data-draft を外すと警告も消える。
-// 公開同期の関門は docs/scripts/check-lp-publish.sh（こちらは非ゼロ終了で止める）。
 (function(){
   var drafts=document.querySelectorAll('#voices [data-draft="true"]');
   if(drafts.length){
-    console.warn('[Unscroll LP] 利用者の声が仮文言のままです（未承認 '+drafts.length+' 件）。'+
-      '掲載許可を得て data-draft を外すまで、公開クローンへ同期しないでください。');
+    console.warn('[Unscroll LP] '+drafts.length+' testimonial(s) still marked as draft.');
   }
 })();
 
-// --- Scroll reveal（getBoundingClientRectベース。どの環境でも確実に表示する） ---
 (function(){
   var reveals=[].slice.call(document.querySelectorAll('.reveal'));
   function inView(el,margin){
