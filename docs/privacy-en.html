@@ -71,7 +71,7 @@ footer{border-top:1px solid var(--line-l);padding:40px 0;font-size:.82rem;color:
 <div class="wrap">
   <span class="kicker">Privacy Policy</span>
   <h1>Privacy Policy</h1>
-  <p class="updated">Last updated: July 7, 2026</p>
+  <p class="updated">Last updated: August 13, 2026</p>
 
   <div class="summary">
     Unscroll (the "App") <strong>never sends your data anywhere except your own device and your own iCloud backup.</strong>
@@ -83,7 +83,7 @@ footer{border-top:1px solid var(--line-l);padding:40px 0;font-size:.82rem;color:
   <p>Through Apple's Screen Time frameworks (Family Controls / DeviceActivity), the App reads <strong>only how long you use the social media apps you selected</strong>. It never accesses what you post, what you browse, your messages, your passwords, or anything else inside those apps.</p>
 
   <h2>2. There is no developer server</h2>
-  <p>Measuring your usage, recording your own time, and saving your photos all happen on this device. The App does not transmit your data to any server operated by the developer, and we cannot access that data. The only thing that leaves your device is the backup to your own iCloud, described in section 4.</p>
+  <p>Measuring your usage, recording your own time, and saving your photos all happen on this device. The App does not transmit your data to any server operated by the developer, and we cannot access that data. The only things that leave your device are: the backup to your own iCloud (section 4), the photos you show to people you invited yourself (section 5), and an anonymous record of how the app is used (section 6).</p>
 
   <h2>3. Your photos are yours alone</h2>
   <p>Photos you take or save in the App are stored only on your device (in the App's local storage) and in your own iCloud as a backup. Whether to share a photo with anyone is always your choice, made one photo at a time. Unless you choose to share it, no one else can see it.</p>
@@ -92,30 +92,51 @@ footer{border-top:1px solid var(--line-l);padding:40px 0;font-size:.82rem;color:
   <p>So that your photos survive a new phone or a reinstall, they are backed up automatically to your own iCloud when saved (Apple's CloudKit — the private area tied to your Apple ID). Records, achievements, and settings are backed up only when you tap "Save to iCloud" in Settings yourself. Restoring likewise happens only when you choose to.</p>
   <p class="muted">Because that storage is private to you, we as the developer cannot see its contents. Data held in iCloud is governed by <a class="link" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>. Where iCloud is unavailable, your data is stored on your device only.</p>
 
-  <h2>5. If you stop, your memories stay</h2>
-  <p>Canceling your subscription does not delete any of your past records or photos. You can still look back on them at any time, and you can still export them.</p>
-
-  <h2>6. You can delete anything, anytime</h2>
-  <p>You can delete any record or photo yourself at any time. Deleting a photo in the App also deletes its iCloud backup. Uninstalling the App removes the App's data stored on your device along with it.</p>
-
-  <h2>7. Collection and third parties</h2>
+  <h2>5. When you share photos with "Keep this day together"</h2>
+  <p>The app lets you invite people to a single day in your journal so that each of you can bring your own photos to it ("Keep this day together"). <strong>Only when you start this yourself</strong> do the photos you kept on that day, the note you added to each of them, and the display name you chose become visible — through Apple's iCloud sharing (CloudKit) — to the people you invited.</p>
   <ul>
-    <li><span class="item-title">Personal information:</span> The App does not collect your name, email address, contacts, location, or any other personal information.</li>
-    <li><span class="item-title">Tracking:</span> There is no advertising. The App does not request the advertising identifier (IDFA) and does not track your behavior.</li>
-    <li><span class="item-title">Third parties:</span> Because the developer holds none of your data, there is nothing to share with or sell to a third party.</li>
-    <li><span class="item-title">Analytics:</span> Usage is tallied on your device only. The contents of your photos and records are never analyzed.</li>
+    <li>Only <strong>the photos from the day you invited people to</strong> are shared. Photos from other days, that day's note, favorites and categories, and your recorded time are not.</li>
+    <li>If you delete a photo, it also disappears from their screen.</li>
+    <li>You can stop at any time (the person who invited can end the share; anyone invited can leave). If you stop, your own photos stay on your device exactly as they were.</li>
+    <li>Everything travels through your iCloud and Apple's CloudKit; <strong>it never passes through a developer server, and we as the developer cannot see any of it.</strong></li>
   </ul>
 
-  <h2>8. Purchases</h2>
+  <h2>6. How the app is used (anonymous usage)</h2>
+  <p>We receive only <strong>how the app was used</strong>, in a form that is not tied to you.</p>
+  <p><span class="item-title">Why:</span> to see where people stop during first-time setup, and whether someone finishes without ever starting a record — used <strong>solely to rebuild those screens</strong>. It is never used for advertising, never to send you notifications or offers, and never sold or given to third parties.</p>
+  <ul>
+    <li><span class="item-title">What we receive:</span> <strong>whether</strong> something happened — how far you got in setup, whether you started a record, whether you kept a photo or a note, whether you viewed the plans screen — plus rounded numbers (for example, a budget as the band "16–30 minutes") and the app version.</li>
+    <li><span class="item-title">What we do not receive:</span> <strong>the photos themselves, anything you wrote, the names of your social apps, your location, your name or email address, or an advertising identifier.</strong></li>
+    <li><span class="item-title">Where it goes:</span> an area the developer holds inside Apple's iCloud (CloudKit). <strong>No third-party analytics service is used.</strong></li>
+    <li><span class="item-title">How it is linked:</span> only a meaningless identifier assigned per installation. It is not linked to your name, email address, or Apple ID. Apple's own anonymous identifier is attached to what is sent, and that too is never used to identify you, and never for advertising.</li>
+    <li><span class="item-title">How to stop it:</span> open Settings → About privacy in the app and turn off "Send how the app is used." From that moment nothing is sent, and anything not yet sent is discarded.</li>
+    <li><span class="item-title">What that switch does not cover:</span> it stops the usage data above and nothing else. Your photo backups to iCloud (section 4) and "Keep this day together" (section 5) keep working, because both live in <strong>your own iCloud and with the people you invited</strong> — they never reach the developer in the first place.</li>
+  </ul>
+
+  <h2>7. If you stop, your memories stay</h2>
+  <p>Canceling your subscription does not delete any of your past records or photos. You can still look back on them at any time, and you can still export them.</p>
+
+  <h2>8. You can delete anything, anytime</h2>
+  <p>You can delete any record or photo yourself at any time. Deleting a photo in the App also deletes its iCloud backup. Uninstalling the App removes the App's data stored on your device along with it.</p>
+
+  <h2>9. Collection and third parties</h2>
+  <ul>
+    <li><span class="item-title">Personal information:</span> The App does not collect your name, email address, contacts, location, or any other personal information. The usage data in section 6 is never linked to any of these either.</li>
+    <li><span class="item-title">Tracking:</span> There is no advertising. The App does not request the advertising identifier (IDFA) and does not track your behavior.</li>
+    <li><span class="item-title">Third parties:</span> Because the developer holds none of your data, there is nothing to share with or sell to a third party. When someone you invited can see your photos through "Keep this day together" (section 5), that is sharing you started yourself — not the developer passing data to a third party.</li>
+    <li><span class="item-title">Analytics:</span> We receive only how the app is used — whether something happened, and rounded numbers — anonymously, to inform development (section 6). The contents of your photos and records are never received or analyzed. No third-party analytics service is used.</li>
+  </ul>
+
+  <h2>10. Purchases</h2>
   <p>Buying, renewing, canceling, and refunding a subscription all happen through the App Store (Apple). Apple handles payment information; the App never receives your credit card details or similar data. For how Apple handles this, please see <a class="link" href="https://www.apple.com/legal/privacy/" target="_blank" rel="noopener">Apple's Privacy Policy</a>.</p>
 
-  <h2>9. Children's privacy</h2>
+  <h2>11. Children's privacy</h2>
   <p>Because the App collects no personal information and the developer holds none of your data, it can be used safely at any age. If a child uses the App, please do so under the supervision of a parent or guardian.</p>
 
-  <h2>10. Changes to this policy</h2>
+  <h2>12. Changes to this policy</h2>
   <p>This policy may be revised as features are added or as laws change. If a significant change is made, we will update the date on this page and, where appropriate, notify you within the App.</p>
 
-  <h2>11. Contact</h2>
+  <h2>13. Contact</h2>
   <p>For any question about this policy or about privacy in the App, please get in touch:<br>
   <a class="link" href="mailto:monyakaa.nyanya@gmail.com">monyakaa.nyanya@gmail.com</a></p>
 
