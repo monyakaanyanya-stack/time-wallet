@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Yutora — 自分のために使えた時間が、数字と写真で残る。</title>
+<title>Yutora — The time you spent on yourself, kept in numbers and photos.</title>
 
-<meta name="description" content="Yutora（ユトラ）は、目的のないスクロールを自分の時間へ方向転換し、その時間と、その日の写真を残すiPhoneアプリ。記録も、写真も、一日を人と持ち寄ることも、無料で始められます。">
+<meta name="description" content="Yutora turns aimless scrolling into time of your own, then keeps that time — and a photo from the day. Free to start, on your own or together with the people who were there.">
 <meta name="theme-color" content="#14110d">
 
 <meta name="apple-itunes-app" content="app-id=6761459599">
@@ -13,14 +13,14 @@
 <link rel="alternate" hreflang="ja" href="https://monyakaanyanya-stack.github.io/time-wallet/">
 <link rel="alternate" hreflang="en" href="https://monyakaanyanya-stack.github.io/time-wallet/index-en.html">
 <link rel="alternate" hreflang="x-default" href="https://monyakaanyanya-stack.github.io/time-wallet/">
-<meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="Yutora — 今日が、残る。">
-<meta property="og:description" content="流れていた毎日を、残る人生に。自分の時間を計測して、その日の景色を写真で残す。">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Yutora — Today stays.">
+<meta property="og:description" content="Turn days that slip by into a life you remember. Track your own time and keep the day in a photo.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://monyakaanyanya-stack.github.io/time-wallet/">
 <meta property="og:image" content="lp-assets/passbook.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:description" content="流れていた毎日を、残る人生に。自分の時間を計測して、その日の景色を写真で残す。">
+<meta name="twitter:description" content="Turn days that slip by into a life you remember. Track your own time and keep the day in a photo.">
 
 <link rel="icon" href="icons/icon.svg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -175,16 +175,13 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .gallery-grid .cell.wide{grid-column:span 2}
 .gallery-grid .cap{position:absolute;left:10px;bottom:9px;font-size:.72rem;color:rgba(255,255,255,.92);text-shadow:0 1px 6px rgba(0,0,0,.6);font-weight:500}
 .gallery-grid .empty{background:rgba(244,238,227,.04);border:1px dashed var(--line-d);display:grid;place-items:center;color:var(--cream-t3);font-size:1.4rem}
-/* .ph-* のグラデ(background ショートハンド)が background-size を auto に戻すため、ここで cover を再指定（原寸ズーム防止） */
+/* re-assert cover: the .ph-* background shorthand resets background-size to auto */
 .gallery-grid .cell.ph{background-size:cover;background-position:center}
 .privacy{margin-top:40px;display:inline-flex;align-items:center;gap:12px;font-size:.9rem;color:var(--cream-t2);border:1px solid var(--line-d);border-radius:999px;padding:11px 22px}
 .privacy .mk{width:7px;height:7px;border-radius:50%;background:var(--green-warm)}
 
-/* 6列にして1枚=2列ぶん＝上段3枚。列幅は3列指定のときと同じになる（(W-2g)/3）。
-   5枚目以降は下段に落ちるので、4枚目を2列目から始めて**下段の2枚を中央に**そろえる。 */
-.voices{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(24px,3.6vw,46px);margin-top:58px;text-align:left}
-.voice{grid-column:span 2;border-top:1px solid var(--line-l);padding-top:26px}
-.voice:nth-child(4){grid-column:2/span 2}
+.voices{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(24px,3.6vw,46px);margin-top:58px;text-align:left}
+.voice{border-top:1px solid var(--line-l);padding-top:26px}
 .s-ink .voice,.s-ink-2 .voice{border-top-color:var(--line-d)}
 .voice blockquote{font-family:var(--serif);font-weight:600;font-size:1.06rem;line-height:1.9;text-wrap:balance}
 
@@ -203,8 +200,6 @@ header.scrolled{background:rgba(20,17,13,.78);backdrop-filter:saturate(140%) blu
 .step{padding:40px 34px 40px 0;border-right:1px solid var(--line-l)}
 .s-ink .step,.s-ink-2 .step{border-right-color:var(--line-d)}
 .step:last-child{border-right:0;padding-right:0}
-/* 2枚目以降は左にも余白を取る＝仕切り線と見出しがくっつかないように（左右対称の34px） */
-.step + .step{padding-left:34px}
 .step .no{font-family:var(--display);font-size:1.05rem;letter-spacing:.1em;color:var(--gold);display:block;margin-bottom:22px}
 .step h3{margin-bottom:12px}.step p{font-size:.98rem;line-height:1.9}
 
@@ -286,7 +281,6 @@ footer{background:var(--ink);border-top:1px solid var(--line-d);padding:54px 0}
 .foot .links a:hover{color:var(--cream-t)}
 
 /* ---------- reveal ---------- */
-.nb{white-space:nowrap}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity 1.1s var(--ease),transform 1.1s var(--ease)}
 .reveal.in{opacity:1;transform:none}
 .d1{transition-delay:.06s}.d2{transition-delay:.16s}.d3{transition-delay:.26s}.d4{transition-delay:.36s}
@@ -332,13 +326,11 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   .band .item{border-right:0;border-bottom:1px solid var(--line-d);padding:26px 0}
   .band .item:last-child{border-bottom:0;padding-bottom:0}
   .voices{grid-template-columns:1fr;gap:34px}
-  .voice,.voice:nth-child(4){grid-column:auto}   /* 縦に5枚つなげる */
   .scroll-cue{display:none}
   .split,.compare{grid-template-columns:1fr;gap:44px}
   .split.flip .col-text{order:0}
   .steps{grid-template-columns:1fr}
   .step{border-right:0;border-bottom:1px solid var(--line-l);padding:30px 0}
-  .step + .step{padding-left:0}   /* 縦積みでは仕切りが横線になるので左余白は戻す */
   .s-ink .step,.s-ink-2 .step{border-bottom-color:var(--line-d)}
   .step:last-child{border-bottom:0}
   .gallery-grid{grid-template-columns:repeat(2,1fr);grid-auto-rows:44vw}
@@ -357,12 +349,12 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   <div class="wrap nav">
     <div class="brand"><span class="mk"></span>Yutora</div>
     <nav class="nav-links">
-      <a href="#gallery">見えた景色</a>
-      <a href="#together">持ち寄る</a>
-      <a href="#how">使い方</a>
-      <a href="#passbook">人生の通帳</a>
-      <a href="#why">なぜ</a>
-      <a href="index-en.html" lang="en" hreflang="en">English</a>
+      <a href="#gallery">The view</a>
+      <a href="#together">Together</a>
+      <a href="#how">How it works</a>
+      <a href="#passbook">Your journal</a>
+      <a href="#why">Why</a>
+      <a href="index.html" lang="ja" hreflang="ja">日本語</a>
     </nav>
     <a href="https://apps.apple.com/app/id6761459599" class="btn btn-line" target="_blank" rel="noopener">App Store</a>
   </div>
@@ -373,13 +365,13 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   <div class="hero-veil"></div>
   <div class="wrap hero-inner">
     <span class="kicker reveal d1">Yutora</span>
-    <h1 class="reveal d2">スクロールしてたら<br>見れなかった景色がある</h1>
-    <p class="lead reveal d3"><span class="nb">自分のために使えた時間が、</span><span class="nb"><span class="green">数字</span>と<span class="green">写真</span>で残る。</span><br><span class="nb">SNSはやめなくていい。</span><br><span class="nb">目的のないスクロールだけ、</span><span style="white-space:nowrap"><span class="nb">自分の時間へ。</span></span><span style="color:var(--cream-t2)"><span class="nb">流れてくる「いい」ではなく、</span><span style="white-space:nowrap"><span class="nb">自分が「いい」と思った今日を。</span></span></span></p>
+    <h1 class="reveal d2">There are things you never saw<br>because you were scrolling</h1>
+    <p class="lead reveal d3">The time you spend on yourself, kept in <span class="green">numbers</span> and <span class="green">photos</span>.<br>You don't have to quit social media — just turn the aimless scrolling into <span style="white-space:nowrap">time of your own.</span><br><span style="color:var(--cream-t2)">Not the &ldquo;good&rdquo; that scrolls past you, but <span style="white-space:nowrap">the day you thought was good.</span></span></p>
     <div class="cta-row reveal d4">
-      <a href="https://apps.apple.com/app/id6761459599" class="btn btn-primary" target="_blank" rel="noopener">App Storeでダウンロード</a>
-      <a href="https://discord.gg/Dsd9bjJuYy" class="btn btn-line" target="_blank" rel="noopener">Discord コミュニティ</a>
+      <a href="https://apps.apple.com/app/id6761459599" class="btn btn-primary" target="_blank" rel="noopener">Download on the App Store</a>
+      <a href="https://discord.gg/Dsd9bjJuYy" class="btn btn-line" target="_blank" rel="noopener">Discord community</a>
     </div>
-    <p class="cta-note reveal d4">iPhone / iOS 17以降・無料で始められます</p>
+    <p class="cta-note reveal d4">iPhone · iOS 17 or later · free to start</p>
   </div>
   <div class="scroll-cue"><span>Scroll</span><span class="ln"></span></div>
 </section>
@@ -389,16 +381,16 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
     <span class="kicker reveal d1">What you get</span>
     <div class="items">
       <div class="item reveal d1">
-        <h3>自分の時間を計測する</h3>
-        <p>始めた分だけ、今日の自分に積み上がる。</p>
+        <h3>Track your own time</h3>
+        <p>Every minute you start adds up to today.</p>
       </div>
       <div class="item reveal d2">
-        <h3>SNSとの変化が見える</h3>
-        <p>今日・今週・今月。減ったかどうかではなく、どう変わったか。</p>
+        <h3>See what changes</h3>
+        <p>Today, this week, this month — not whether it dropped, but how it changed.</p>
       </div>
       <div class="item reveal d3">
-        <h3>その日を写真で残す</h3>
-        <p>思わず残したくなった一枚と一言を、<span style="white-space:nowrap">その日の記録に。</span></p>
+        <h3>Keep the day in a photo</h3>
+        <p>The one photo you wanted to keep, and a few words, <span style="white-space:nowrap">saved to that day.</span></p>
       </div>
     </div>
   </div>
@@ -406,8 +398,8 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 
 <section class="s-paper center">
   <div class="wrap">
-    <h2 class="statement reveal d1">見ていた<span class="em">時間</span>は残る<br>見ていた<span class="em">内容</span>は残らない</h2>
-    <p class="prose muted reveal d2" style="margin-top:36px"><span class="nb">気づいたら一日が終わっている。</span><br><span class="nb">あの一週間、</span><span class="nb">何をしていたか思い出せない。</span><br><span class="nb">指を動かしていた時間だけでは</span><span class="nb">ありません。</span><br><span class="nb">なんとなく流れに</span><span class="nb">乗っていた時間も、</span><span class="nb">同じように消えていきます。</span><br><span class="nb">失っているのは時間そのものより、</span><b><span class="nb">覚えていられたはずの毎日</span></b><span class="nb">かもしれない。</span></p>
+    <h2 class="statement reveal d1">The <span class="em">time</span> you spent stays<br>What you watched does <span class="em">not</span></h2>
+    <p class="prose muted reveal d2" style="margin-top:36px">The day is over before you notice. You can't recall what you did last week.<br>It isn't only the time your thumb was moving. The hours you drifted along with the feed disappear the same way.<br>What you lose may be less the time itself than <b>the days you could have remembered</b>.</p>
   </div>
 </section>
 
@@ -415,16 +407,16 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   <div class="wrap split">
     <div class="col-text">
       <span class="kicker reveal d1">What it is</span>
-      <h2 class="reveal d1">時間だけでも<br>写真だけでもない</h2>
-      <p class="lead muted reveal d2"><span class="nb">SNSは1日の予算の中で</span><span class="nb">付き合う。</span><br><span class="nb">禁止でも我慢でもなく、</span><span class="nb">方向転換。</span><br><span class="nb">そして、</span><span class="nb">心を向けたその時間に</span><span class="nb">撮れた一枚が、</span><span class="nb">記録として積み上がる。</span></p>
+      <h2 class="reveal d1">Not just time.<br>Not just photos.</h2>
+      <p class="lead muted reveal d2">Social media lives inside a daily budget. Not banned, not endured — redirected.<br>And a photo from the time you actually gave your attention to builds up as a record.</p>
       <div class="mini reveal d3">
-        <div class="row"><span class="mk"></span><div><span class="nb">SNSに使った時間と、</span><span class="nb">自分のために過ごした時間がひと</span><span class="nb">目。</span><br><span class="nb">予算を超えたら、</span><span class="nb">そっと自分の時間へ。</span></div></div>
-        <div class="row"><span class="mk"></span><div><span class="nb">心を向けた時間が、</span><span class="nb">写真の裏側にそっと記録される。</span></div></div>
-        <div class="row"><span class="mk"></span><div><span class="nb">「止める」のではなく「動かす」。</span><br><span class="nb">開きたくなった衝動を、</span><span class="nb">自分で選んだ時間の入口に変える。</span></div></div>
+        <div class="row"><span class="mk"></span><div>See your social media time and your own time at a glance. Go over budget, and you're gently pointed back to your own time.</div></div>
+        <div class="row"><span class="mk"></span><div>The time you gave your attention to is quietly recorded behind the photo.</div></div>
+        <div class="row"><span class="mk"></span><div>Not stopping — moving. The urge to open an app becomes the doorway into time you chose.</div></div>
       </div>
     </div>
     <div class="col-img reveal d2">
-      <div class="phone"><img src="lp-assets/home.jpg" alt="Yutoraのホーム画面：自分のために使った時間と今日のページ" loading="lazy"></div>
+      <div class="phone"><img src="lp-assets/home.jpg" alt="Yutora home screen: the time you spent on yourself, and today's page" loading="lazy"></div>
     </div>
   </div>
 </section>
@@ -432,48 +424,49 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 <section class="s-ink-2 center" id="gallery">
   <div class="wrap">
     <span class="kicker reveal d1">The view you reclaim</span>
-    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">誰にも見られない<br>だから<span class="green">自分のために</span>残せる</h2>
-    <p class="prose muted reveal d2" style="margin-top:30px"><span class="nb">映える必要も、</span><span class="nb">上手に撮る必要もありません。</span><br><span class="nb">自分が「いい」と思ったから残す。</span><br><span class="nb">その一枚が、</span><span class="nb">通帳のように貯まっていきます。</span><br><span class="nb">誰かに見せるためじゃない。</span><br><span class="nb">あとで自分が思い出すために。</span></p>
+    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">No one else sees it —<br>so you can keep it <span class="green">for yourself</span></h2>
+    <p class="prose muted reveal d2" style="margin-top:30px">It doesn't have to look good, and you don't have to shoot it well. You keep it because you thought it was good.<br>Those photos build up like entries in a journal.<br>Not to show anyone. So that you can remember, later.</p>
 
     
     <div class="gallery-grid reveal d2">
-      <div class="cell ph ph-window" style="background-image:url(lp-assets/life-window.jpg)"><span class="cap">朝の光</span></div>
-      <div class="cell tall ph ph-forest" style="background-image:url(lp-assets/life-forest.jpg)"><span class="cap">市場通りを歩いた</span></div>
-      <div class="cell ph ph-coffee" style="background-image:url(lp-assets/life-coffee.jpg)"><span class="cap">灯りの店</span></div>
+      <div class="cell ph ph-window" style="background-image:url(lp-assets/life-window.jpg)"><span class="cap">Morning light</span></div>
+      <div class="cell tall ph ph-forest" style="background-image:url(lp-assets/life-forest.jpg)"><span class="cap">Walked the market street</span></div>
+      <div class="cell ph ph-coffee" style="background-image:url(lp-assets/life-coffee.jpg)"><span class="cap">A lit-up shop</span></div>
       <div class="cell ph ph-field" style="background-image:url(lp-assets/life-field.jpg)"></div>
       <div class="cell empty">＋</div>
-      <div class="cell wide ph ph-sea" style="background-image:url(lp-assets/life-sea.jpg);background-position:center 82%"><span class="cap">海まで歩いた</span></div>
-      <div class="cell ph ph-dusk" style="background-image:url(lp-assets/life-dusk.jpg)"><span class="cap">夜の広場</span></div>
+      <div class="cell wide ph ph-sea" style="background-image:url(lp-assets/life-sea.jpg);background-position:center 82%"><span class="cap">Walked to the sea</span></div>
+      <div class="cell ph ph-dusk" style="background-image:url(lp-assets/life-dusk.jpg)"><span class="cap">The square at night</span></div>
       <div class="cell ph ph-walk" style="background-image:url(lp-assets/life-walk.jpg)"></div>
       <div class="cell empty">＋</div>
-      <div class="cell ph ph-night" style="background-image:url(lp-assets/life-night.jpg)"><span class="cap">夜更かし</span></div>
+      <div class="cell ph ph-night" style="background-image:url(lp-assets/life-night.jpg)"><span class="cap">Stayed up late</span></div>
       <div class="cell ph ph-snow" style="background-image:url(lp-assets/life-snow.jpg)"></div>
     </div>
 
-    <span class="privacy reveal d3"><span class="mk"></span>写真も記録も、端末とあなたのiCloudの中だけ。開発者のサーバーには送りません</span>
+    <span class="privacy reveal d3"><span class="mk"></span>Photos and records stay on your device and in your own iCloud. Nothing is sent to the developer's servers</span>
   </div>
 </section>
 
 <section class="s-paper center" id="together">
   <div class="wrap">
     <span class="kicker reveal d1">Keep a day together</span>
-    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">写真は分け合う<br><span class="green">記憶</span>は、自分のもの</h2>
-    <p class="prose muted reveal d2" style="margin-top:30px"><span class="nb">カレンダーの一日に、</span><span class="nb">一緒に過ごした人を招けます。</span><br><span class="nb">それぞれが自分の9枚を</span><span class="nb">持ち寄って、</span><span class="nb">同じ一日を人数分の視点で</span><span class="nb">残せます。</span></p>
-    <p class="prose reveal d3" style="margin-top:30px"><b><span class="nb">通知も、</span><span class="nb">バッジも、</span><span class="nb">「新着」もありません。</span></b><span class="nb">次に開いたとき、</span><span class="nb">そこにあるだけです。</span></p>
-    <span class="privacy reveal d3"><span class="mk"></span>持ち寄った写真はAppleのiCloudを通じて相手に届きます。開発者はその中身を見られません</span>
+    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">Photos are shared<br><span class="green">memories</span> are personal</h2>
+    <p class="prose muted reveal d2" style="margin-top:30px">Invite the people who were there into a day on your calendar.<br>Each of you brings your own nine photos, so one day is kept from as many points of view as there are people.</p>
+    <p class="prose muted reveal d3" style="margin-top:22px">They see the photos you brought and the words you added — nothing else.<br>Your note for the day, your favourites and the time you recorded stay yours.</p>
+    <p class="prose reveal d3" style="margin-top:22px"><b>No notifications. No badges. No &ldquo;new.&rdquo;</b><br>It&rsquo;s simply there the next time you open it.</p>
+    <span class="privacy reveal d3"><span class="mk"></span>Shared photos travel through Apple&rsquo;s iCloud. The developer cannot see them</span>
   </div>
 </section>
 
 <section class="s-paper" id="how">
   <div class="wrap center">
     <span class="kicker reveal d1">How it works</span>
-    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">自分で選んだ時間が<span class="green">残るまで</span></h2>
+    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">How time you chose <span class="green">becomes something you keep</span></h2>
   </div>
   <div class="wrap">
     <div class="steps">
-      <div class="step reveal d1"><span class="no">01</span><h3>SNSを開きたくなる</h3><p>その瞬間、Yutoraが「自分の時間」を差し出す。1分でも始めれば、そこから自分で選んだ時間に戻れる。</p></div>
-      <div class="step reveal d2"><span class="no">02</span><h3>使うのは決めた分だけ</h3><p>SNSは1日の予算の中で。記録している間は、そっと遮断。使う量は、自分で決めた上限まで。</p></div>
-      <div class="step reveal d3"><span class="no">03</span><h3>毎日が残る</h3><p>思わず残したくなった一枚を、その日の通帳に。今週・今月・今年の自分が、形になる。</p></div>
+      <div class="step reveal d1"><span class="no">01</span><h3>You feel the urge to open it</h3><p>At that moment, Yutora offers you your own time instead. Start even one minute, and you're back in time you chose.</p></div>
+      <div class="step reveal d2"><span class="no">02</span><h3>Only as much as you decided</h3><p>Social media lives inside a daily budget. While you're recording, it's quietly blocked. You set the limit.</p></div>
+      <div class="step reveal d3"><span class="no">03</span><h3>The days stay</h3><p>The photo you wanted to keep goes into that day's journal. Your week, your month, your year take shape.</p></div>
     </div>
   </div>
 </section>
@@ -482,17 +475,17 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   <div class="wrap split flip">
     <div class="col-text">
       <span class="kicker reveal d1">Your passbook</span>
-      <h2 class="reveal d1">時間と記憶が<br><span class="green">同じ場所</span>に積み上がる</h2>
-      <p class="lead muted reveal d2"><span class="nb">日々の記録と、</span><span class="nb">その日の一枚。</span><br><span class="nb">数字と記憶が同じ通帳に並ぶから、</span><span class="nb">自分のために過ごした時間が実感に</span><span class="nb">変わる。</span><br><span class="nb">日・週・月・年でふりかえれば、</span><span class="nb">自分の変化が見えてくる。</span></p>
+      <h2 class="reveal d1">Time and memory build up<br>in the <span class="green">same place</span></h2>
+      <p class="lead muted reveal d2">The daily record and the photo from that day. Numbers and memories sit in the same journal, so the time you spent on yourself becomes something you can feel. Look back by day, week, month or year, and you start to see how you've changed.</p>
       <div class="mini reveal d3">
-        <div class="row"><span class="mk"></span><div><span class="nb">写真カレンダーで、</span><span class="nb">覚えている日が一目でわかる。</span></div></div>
-        <div class="row"><span class="mk"></span><div><span class="nb">週間・月間レポートで、</span><span class="nb">自分のために使った時間の変化を</span><span class="nb">可視化。</span></div></div>
+        <div class="row"><span class="mk"></span><div>The photo calendar shows at a glance which days you remember.</div></div>
+        <div class="row"><span class="mk"></span><div>Weekly and monthly reports show how your own time is changing.</div></div>
       </div>
     </div>
     <div class="col-img reveal d2">
       <div class="phone-pair">
-        <div class="phone"><img src="lp-assets/passbook.jpg" alt="写真カレンダー（人生の通帳）" loading="lazy"></div>
-        <div class="phone"><img src="lp-assets/report.jpg" alt="週間レポート・実績" loading="lazy"></div>
+        <div class="phone"><img src="lp-assets/passbook.jpg" alt="Photo calendar — the journal of your life" loading="lazy"></div>
+        <div class="phone"><img src="lp-assets/report.jpg" alt="Weekly report and achievements" loading="lazy"></div>
       </div>
     </div>
   </div>
@@ -501,44 +494,34 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 <section class="s-paper center" id="voices">
   <div class="wrap">
     <span class="kicker reveal d1">What changed</span>
-    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto"><span class="green">利用者の声</span></h2>
-    <p class="prose muted reveal d2" style="margin-top:28px"><span class="nb">SNSの時間が何時間減ったか、</span><span class="nb">ではなく。</span></p>
+    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">What is happening<br><span class="green">to the people using it</span></h2>
+    <p class="prose muted reveal d2" style="margin-top:28px">Not how many hours of social media they cut.</p>
 
     <div class="voices reveal d2">
       <div class="voice">
-        <blockquote><span>1日が、前より長く</span><span>感じるようになりました。</span></blockquote>
-        <p class="body">時間の使い方が変わって、毎日の出来事を思い出せるくらい、心にも時間にも余裕ができました。SNSの時間が減ったことよりも、そのあとの生活が変わったことのほうが大きいです。</p>
-        <cite>— 継続してお使いの方</cite>
+        <blockquote><span>The day feels longer</span><span>than it used to.</span></blockquote>
+        <p class="body">The way I use my time changed, and I have enough room — in my schedule and in my head — to actually remember what happened each day. The bigger thing isn't that my social media time went down; it's that the life after it changed.</p>
+        <cite>— A long-term user</cite>
       </div>
       <div class="voice">
-        <blockquote><span>自分の時間を、</span><span>大切にしたくなるアプリです。</span></blockquote>
-        <p class="body">一番好きなのは、自分の時間を計測できること。何に時間を使っているか気づけて、1日の使い方を良くしようと前向きになれました。目的のないスクロールだけを減らす考え方なので、制限される窮屈さがなく、人にも勧めやすいです。</p>
-        <cite>— 継続してお使いの方</cite>
+        <blockquote><span>It makes you want to</span><span>treasure your own time.</span></blockquote>
+        <p class="body">What I like most is being able to measure my own time. I noticed where my time was going, and it made me want to make better use of the day. Because it only trims the aimless scrolling, it never feels restrictive — which makes it easy to recommend.</p>
+        <cite>— A long-term user</cite>
       </div>
       <div class="voice">
-        <blockquote><span>今日はこれだけ自分のために使えた、</span><span>と見えるのが嬉しい。</span></blockquote>
-        <p class="body">以前ためしたポモドーロタイマーは続きませんでしたが、これは自分に使えた時間が積み上がるのが一目で分かるので続いています。時間の記録と写真の記録を一緒に残せるので、写真を撮るのが好きな人にも合いそうです。</p>
-        <cite>— 継続してお使いの方</cite>
-      </div>
-      <div class="voice">
-        <blockquote><span>スマホを閉じて、</span><span>娘と過ごす時間が増えました。</span></blockquote>
-        <p class="body">娘のほうが理解が早くて、SNSを開いても5分で「この子💀が出てきたから」と自分でスマホを閉じています。そのあとは2人でお茶をしたり、娘の好きな制作をしたり。このやりとりが良いみたいで、親子関係がすごく良くなっている気がします。</p>
-        <cite>— 娘さんと使っている方</cite>
-      </div>
-      <div class="voice">
-        <blockquote><span>誰かが作った写真ではなく、</span><span>自分たちで撮った写真で</span><span>盛り上がっています。</span></blockquote>
-        <p class="body">10年ほど前から「その場の空気を目に焼き付けたい」と思って、あまり写真を撮らなくなっていました。使い始めてから日常の写真を撮る機会がかなり増えて、娘と一緒に撮ったり、猫の撮ったことのない姿を撮ったり。「手はこっち！」「もっとこう！」と2人で騒ぎながら撮っています。</p>
-        <cite>— 同じ方から、後日</cite>
+        <blockquote><span>Seeing &ldquo;this much was for me today&rdquo;</span><span>is what I like.</span></blockquote>
+        <p class="body">I tried a Pomodoro timer before and it never stuck. This one does, because I can see the time I spent on myself adding up. It keeps the time and the photos together, so I think it suits people who like taking pictures too.</p>
+        <cite>— A long-term user</cite>
       </div>
     </div>
 
-    <p class="voices-note reveal d3">※ 掲載は本人の許可を得た感想です。読みやすさのため要約・編集しています。<span style="white-space:nowrap">感じ方には個人差があります。</span></p>
+    <p class="voices-note reveal d3">Published with permission. Condensed and edited for readability, and translated from Japanese. <span style="white-space:nowrap">Individual experiences vary.</span></p>
 
-    <p class="prose muted reveal d3" style="margin-top:40px"><span class="nb">一人ひとりの結果はちがいます。</span><br><span class="nb">まずは無料で、</span><span style="white-space:nowrap"><span class="nb">あなたの毎日で。</span></span></p>
+    <p class="prose muted reveal d3" style="margin-top:40px">Results differ from person to person. Try it <span style="white-space:nowrap">in your own days first.</span></p>
     <div class="cta-row reveal d3" style="justify-content:center;margin-top:22px">
-      <a href="https://apps.apple.com/app/id6761459599" class="btn btn-primary" target="_blank" rel="noopener">App Storeでダウンロード</a>
+      <a href="https://apps.apple.com/app/id6761459599" class="btn btn-primary" target="_blank" rel="noopener">Download on the App Store</a>
     </div>
-    <p class="cta-note reveal d3">iPhone / iOS 17以降・無料で始められます</p>
+    <p class="cta-note reveal d3">iPhone · iOS 17 or later · free to start</p>
   </div>
 </section>
 
@@ -547,7 +530,7 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
     <div class="col-img reveal d1">
       
       <div class="collage">
-        <div class="title"><span id="collage-title">6月の日記</span></div>
+        <div class="title"><span id="collage-title">June diary</span></div>
         <div class="ph rand"></div><div class="ph rand"></div><div class="ph rand"></div>
         <div class="ph rand"></div><div class="ph rand"></div><div class="ph rand"></div>
         <div class="ph rand"></div><div class="ph rand"></div><div class="ph rand"></div>
@@ -556,9 +539,9 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
     </div>
     <div class="col-text">
       <span class="kicker reveal d1">One month, one frame</span>
-      <h2 class="reveal d1">毎日は自分のために<br>1か月は一枚の<span class="green">記録</span>に</h2>
-      <p class="lead muted reveal d2"><span class="nb">その月に貯めた一枚一枚が、</span><span class="nb">自動で一枚のコラージュに。</span><br><span class="nb">勉強の記録でも、</span><span class="nb">読み切った本でも、</span><span class="nb">つくっていたものでも、</span><span class="nb">誰かとの思い出でも——</span><span class="green"><span class="nb">その1か月をどう過ごすかは、</span><span class="nb">あなた次第</span></span><span class="nb">。</span><br><span class="nb">タイトルも、</span><span class="nb">自分の言葉で。</span></p>
-      <p class="use-note reveal d3">※ コラージュのタイトル編集はご契約中に使える機能です。写真は端末の中に残り、共有するかはあなたが選びます。</p>
+      <h2 class="reveal d1">Each day is for you.<br>Each month becomes one <span class="green">keepsake</span>.</h2>
+      <p class="lead muted reveal d2">Every photo you kept that month becomes a single collage. A record of studying, the books you finished, the thing you were making, time with someone who matters — <span class="green">how you spend the month is up to you</span>. The title is in your own words, too.</p>
+      <p class="use-note reveal d3">Editing the collage title is available with a subscription. Photos stay on your device, and sharing is always your choice.</p>
     </div>
   </div>
 </section>
@@ -566,28 +549,28 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 <section class="s-ink-2" id="calc">
   <div class="wrap center">
     <span class="kicker reveal d1">Where your time goes</span>
-    <h2 class="reveal d1" style="max-width:32ch;margin:0 auto">その時間は1年で<span class="green">何日分</span>？</h2>
-    <p class="prose muted reveal d2" style="margin-top:28px"><span class="nb">1日のSNS時間を</span><span class="nb">入れてみてください。</span><br><span class="nb">1週間・1か月・1年で、</span><span class="nb">どれだけの時間になるかが</span><span class="nb">見えます。</span></p>
+    <h2 class="reveal d1" style="max-width:32ch;margin:0 auto">How many <span class="green">days a year</span> is that?</h2>
+    <p class="prose muted reveal d2" style="margin-top:28px">Enter your daily social media time.<br>See what it adds up to over a week, a month, a year.</p>
   </div>
   <div class="wrap">
     <div class="calc-card reveal d2">
       <div class="calc-inputs" style="grid-template-columns:1fr">
         <div class="calc-field">
-          <label class="calc-label" for="snsh">1日のSNS時間</label>
-          <span class="calc-input"><input id="snsh" type="number" inputmode="decimal" min="0" step="0.5" value="2" aria-label="1日のSNS時間（時間）"><span class="unit">時間</span></span>
+          <label class="calc-label" for="snsh">Social media per day</label>
+          <span class="calc-input"><input id="snsh" type="number" inputmode="decimal" min="0" step="0.5" value="2" aria-label="Social media per day, in hours"><span class="unit">hours</span></span>
         </div>
       </div>
       <div class="calc-out">
         <div class="calc-days">
-          <span class="calc-days-label">1年で、まる</span>
-          <span class="calc-days-val"><span id="days">30</span>日分</span>
+          <span class="calc-days-label">In a year, that is</span>
+          <span class="calc-days-val"><span id="days">30</span> full days</span>
         </div>
         <div class="calc-lines">
-          <div class="calc-line">1週間で <b><span id="wk">14</span>時間</b></div>
-          <div class="calc-line">1か月で <b>約<span id="mo">60</span>時間</b></div>
-          <div class="calc-line">1年で <b>約<span id="yr">730</span>時間</b> <span class="accent">＝ まる<span id="days2">30</span>日分</span></div>
+          <div class="calc-line">A week: <b><span id="wk">14</span> hours</b></div>
+          <div class="calc-line">A month: <b>about <span id="mo">60</span> hours</b></div>
+          <div class="calc-line">A year: <b>about <span id="yr">730</span> hours</b> <span class="accent">= a full <span id="days2">30</span> days</span></div>
         </div>
-        <p class="calc-note">この時間をどこに使うかを、自分で決めるためのアプリです。</p>
+        <p class="calc-note">This app is for deciding, yourself, where that time goes.</p>
       </div>
     </div>
   </div>
@@ -596,26 +579,26 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 <section class="s-paper" id="compare">
   <div class="wrap center">
     <span class="kicker reveal d1">Not just blocking</span>
-    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">SNSを止めるだけで<br>終わらせない</h2>
+    <h2 class="reveal d1" style="max-width:30ch;margin:0 auto">It doesn't end<br>at blocking</h2>
   </div>
   <div class="wrap">
     <div class="compare">
       <div class="col them reveal d1">
-        <span class="tag">ありがちな制限アプリ</span>
-        <h3>「止める」「塞ぐ」</h3>
+        <span class="tag">The usual blocking app</span>
+        <h3>Stop it. Wall it off.</h3>
         <ul>
-          <li><span class="mk">×</span>開けなくするだけで、時間の行き先は残らない</li>
-          <li><span class="mk">×</span>我慢が切れたら元通り</li>
-          <li><span class="mk">×</span>「やめた」記録は残っても、「過ごした」記録は残らない</li>
+          <li><span class="mk">×</span>It only locks the app; where the time went is never recorded</li>
+          <li><span class="mk">×</span>The moment your willpower runs out, you're back where you started</li>
+          <li><span class="mk">×</span>You get a record of what you quit, not a record of what you lived</li>
         </ul>
       </div>
       <div class="col us reveal d2">
         <span class="tag">Yutora</span>
-        <h3>「動かす」「残す」</h3>
+        <h3>Move it. Keep it.</h3>
         <ul>
-          <li><span class="mk">✓</span>開きたくなった衝動を、自分で選んだ時間の入口に変える</li>
-          <li><span class="mk">✓</span>自分で選んで過ごした時間が、写真と記録として積み上がる</li>
-          <li><span class="mk">✓</span>あとで自分が思い出せる、人生の通帳になる</li>
+          <li><span class="mk">✓</span>The urge to open an app becomes the doorway into time you chose</li>
+          <li><span class="mk">✓</span>The time you chose to spend builds up as photos and records</li>
+          <li><span class="mk">✓</span>It becomes a journal of your life, one you can look back on</li>
         </ul>
       </div>
     </div>
@@ -628,13 +611,13 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   <div class="wrap inner">
     <div class="narrow">
       <span class="kicker reveal d1">Why I made this</span>
-      <h2 class="reveal d1" style="margin-bottom:30px">1年があっという間に過ぎた</h2>
+      <h2 class="reveal d1" style="margin-bottom:30px">A year went by in an instant</h2>
       <div class="prose reveal d2">
-        <p>作業したいのに、気づくとSNSをスクロールしている。集中できない自分が、ずっと嫌でした。だからSNSを開く前に「自分の時間を始める」仕組みを、自分のために作りました。</p>
-        <p>けれど、あとから気づいたのは、失っていたのは作業時間だけではなかったということです。目的なくSNSを見る時間を減らして過ごしたこの1年は、驚くほど濃いものでした。それまでの何年かは、ただ流れで生きていた気がします。目的なく見続けていた頃と、自分で時間の行き先を選ぶようになった今とでは、覚えている毎日の量がまるで違います。</p>
-        <p>その増えた「覚えている毎日」を残しておきたくて、写真の機能をつけました。やめなきゃいけない、とは言いません。やめたくないなら、それでいい。ただ、流れてくるものではなく、自分が「いい」と思えるものに時間を向けたいなら、その手伝いをしたいと思っています。</p>
+        <p>I wanted to work, and kept finding myself scrolling instead. I hated that I couldn't focus. So I built something for myself: a way to start my own time before opening social media.</p>
+        <p>What I realised later was that it wasn't only work time I'd been losing. The year I spent with less aimless scrolling was astonishingly full. The years before it, I think I was just drifting. Between the time I kept watching without purpose and now, when I choose where my time goes, the number of days I actually remember is completely different.</p>
+        <p>I added the photo feature because I wanted to keep those remembered days. I won't tell you that you have to quit. If you don't want to, that's fine. But if you'd rather give your time to what you think is good, instead of what happens to scroll past — I'd like to help with that.</p>
       </div>
-      <div class="sign reveal d3">— Yutora をつくった、<span style="white-space:nowrap">ひとりの開発者より</span></div>
+      <div class="sign reveal d3">— From the one developer <span style="white-space:nowrap">who made Yutora</span></div>
     </div>
   </div>
 </section>
@@ -643,52 +626,48 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   <div class="ph ph-dawn" style="background-image:url(lp-assets/life-morning.jpg)"></div>
   <div class="veil"></div>
   <div class="wrap inner center">
-    <h2 class="reveal d1">今日が<span class="green">残る</span>。</h2>
-    <p class="lead muted reveal d2" style="margin:0 auto 30px"><span class="nb">目的のないスクロールだけを、</span><span style="white-space:nowrap"><span class="nb">自分で選んだ時間へ。</span></span><span class="nb">その時間に過ごしたことは、</span><span class="nb">写真と記録として残ります。</span></p>
-    <p class="price reveal d2"><b>無料で始められます。</b><br><b><span class="nb">記録も写真も、</span><span class="nb">一日を人と</span><span class="nb">持ち寄ることも</span></b>
-      <span class="fine">SNS全体の保護（複数のアプリをまとめて）と、すべての期間の振り返りは<span style="white-space:nowrap">Premium（¥5,980/年・月額 ¥880）。</span><br>年額プランには14日間の無料期間があります。<br>iPhone / iOS 17以降・日本語と英語に対応。<span style="white-space:nowrap">解約しても記録は消えません。</span></span></p>
+    <h2 class="reveal d1">Today <span class="green">stays</span>.</h2>
+    <p class="lead muted reveal d2" style="margin:0 auto 30px">Turn only the aimless scrolling into <span style="white-space:nowrap">time you chose.</span><br>What you do with that time stays, as photos and records.</p>
+    <p class="price reveal d2"><b>Free to start.</b> <span style="white-space:nowrap">Photos, your own time,</span> <span style="white-space:nowrap">and keeping a day together.</span>
+      <span class="fine">iPhone · iOS 17 or later · Available in English and Japanese.<br>Cancel any time — <span style="white-space:nowrap">your records are never deleted.</span></span></p>
     <div class="cta-row reveal d3">
-      <a class="btn btn-primary" href="https://apps.apple.com/app/id6761459599" target="_blank" rel="noopener">App Storeでダウンロード</a>
+      <a class="btn btn-primary" href="https://apps.apple.com/app/id6761459599" target="_blank" rel="noopener">Download on the App Store</a>
       
       <a id="discord-cta" class="btn btn-line" href="https://discord.gg/Dsd9bjJuYy" target="_blank" rel="noopener">
         <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor" aria-hidden="true" style="flex-shrink:0">
           <path d="M20.317 4.369A19.79 19.79 0 0 0 15.432 3a13.6 13.6 0 0 0-.617 1.27 18.27 18.27 0 0 0-5.633 0A13.2 13.2 0 0 0 8.565 3 19.74 19.74 0 0 0 3.677 4.37C.533 9.046-.32 13.605.105 18.1a19.9 19.9 0 0 0 6.073 3.058c.488-.665.922-1.37 1.296-2.111a12.94 12.94 0 0 1-2.04-.978c.171-.125.338-.255.5-.387a14.22 14.22 0 0 0 12.132 0c.164.135.331.265.5.387-.652.382-1.336.71-2.045.98.375.74.81 1.444 1.297 2.11a19.84 19.84 0 0 0 6.076-3.058c.5-5.21-.838-9.728-3.495-13.732ZM8.02 15.331c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.42 2.157-2.42 1.21 0 2.176 1.096 2.157 2.42 0 1.334-.955 2.419-2.157 2.419Zm7.975 0c-1.183 0-2.157-1.085-2.157-2.419 0-1.333.955-2.42 2.157-2.42 1.21 0 2.176 1.096 2.157 2.42 0 1.334-.946 2.419-2.157 2.419Z"/>
-        </svg>Discord コミュニティに参加
+        </svg>Join the Discord community
       </a>
       
     </div>
-    <p class="cta-note reveal d3">使い方の相談や要望、開発の様子はコミュニティで。参加は無料・いつでも退出できます。</p>
+    <p class="cta-note reveal d3">Questions, requests and behind-the-scenes development live in the community. Free to join, leave any time.</p>
 
     
     <div class="qr reveal d3">
-      <img src="lp-assets/qr-appstore.svg" alt="App StoreのYutoraのページを開くQRコード" width="176" height="176" loading="lazy">
-      <span class="t">PCでご覧の方は、iPhoneのカメラで読み取ってください。<small>iPhone 専用アプリです。</small></span>
+      <img src="lp-assets/qr-appstore.svg" alt="QR code to open Yutora on the App Store" width="176" height="176" loading="lazy">
+      <span class="t">On a computer? Scan this with your iPhone camera.<small>iPhone only.</small></span>
     </div>
 
     <div class="faq reveal d3">
       <details>
-        <summary>一般的なSNS制限アプリと何が違いますか？</summary>
-        <p class="a">開けなくするだけで終わりません。SNSは1日の予算の中で使い、そのぶん自分のために過ごした時間を計測して、その日に過ごしたことを写真で残します。残るのは「やめた記録」ではなく「過ごした記録」です。</p>
+        <summary>How is this different from a normal app blocker?</summary>
+        <p class="a">It doesn't end at locking apps. Social media lives inside a daily budget, the time you spend on yourself is measured, and the day itself is kept in a photo. What remains isn't a record of what you quit — it's a record of what you lived.</p>
       </details>
       <details>
-        <summary>SNSを完全に使えなくするアプリですか？</summary>
-        <p class="a">いいえ。1日に使う時間はあなたが決めます。決めた分を超えたときだけ、そっと自分の時間へ向け直します。発信や連絡、仕事での利用を止めるためのアプリではありません。画面の中か外かも問いません。映画を最後まで見た夜も、本を読み切った日も、自分で選んで向き合った時間なら、それがあなたの時間です。</p>
+        <summary>Does it block social media completely?</summary>
+        <p class="a">No. You decide how much time you get each day. Only when you go past it are you gently pointed back to your own time. It isn't here to stop you posting, messaging or working. And it doesn't care whether you're on a screen or off it — the night you watched a film to the end, the day you finished a book: if you chose to give it your attention, that is your time.</p>
       </details>
       <details>
-        <summary>写真や記録はどこに保存されますか？</summary>
-        <p class="a">端末の中と、あなた自身のiCloudだけです。開発者のサーバーには送られません。書き出すかどうかも、誰かと持ち寄るかどうかも、あなたが選びます。持ち寄った写真もAppleのiCloudを通って相手に届くだけで、開発者はその中身を見られません。</p>
+        <summary>Where are my photos and records stored?</summary>
+        <p class="a">On your device and in your own iCloud, and nowhere else. Nothing is sent to the developer's servers. Exporting and sharing are always your choice.</p>
       </details>
       <details>
-        <summary>動画は残せますか？</summary>
-        <p class="a">残せるのは写真だけで、動画は撮れません。残るのは、動かない一枚です。写真はシャッターを一度押せば終わりますが、動画はその間ずっとスマホを構えていることになります。このアプリが増やしたいのは、画面を持っている時間ではなく、その目で見ていた時間です。それに、一覧の中で写真が動きはじめたら、それはもうフィードです。</p>
+        <summary>Can I keep videos?</summary>
+        <p class="a">Photos only — there is no video recording. What stays is a single still image. A photo takes one press of the shutter; a video means holding your phone up for as long as it runs. What this app wants to add to your day isn't time spent holding a screen — it's time spent looking at something with your own eyes. And once pictures start moving inside a grid, that grid is a feed.</p>
       </details>
       <details>
-        <summary>無料でどこまで使えますか？</summary>
-        <p class="a">写真も、一言も、自分の時間の記録も、月のまとめも、一日を人と持ち寄ることも、契約なしで使えます。SNSのブロックは、いちばん時間を使っているアプリ1つから。複数のアプリをまとめて守ることと、すべての期間の振り返りがPremiumです。年額プランには14日間の無料期間があります。解約しても、それまでの記録と写真は消えません。</p>
-      </details>
-      <details>
-        <summary>「持ち寄る」は、相手にどこまで見えますか？</summary>
-        <p class="a">その日に持ち寄った写真と、写真に添えた一言だけです。通帳のその日に書いたひとこと、お気に入り、記録した時間、ほかの日のことは相手に見えません。相手の写真もあなたの通帳には入らず、カレンダーに出るのはいつも自分の写真だけです。やめても、それまでに持ち寄った写真はお互いの手元に残ります。</p>
+        <summary>How much can I do for free?</summary>
+        <p class="a">Photos, notes, recording your own time, monthly collages and keeping a day together all work without a subscription. Blocking starts with the one app you spend the most time in. Premium adds protection across several apps at once and looking back over any period. The yearly plan includes 14 days free. If you cancel, the records and photos you already have are not deleted.</p>
       </details>
     </div>
   </div>
@@ -698,15 +677,15 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   <div class="wrap foot">
     <div class="brand"><span class="mk"></span>Yutora</div>
     <div class="links">
-      <a href="#gallery">見えた景色</a>
-      <a href="#together">持ち寄る</a>
-      <a href="#how">使い方</a>
-      <a href="#passbook">人生の通帳</a>
-      <a href="https://apps.apple.com/app/id6761459599" target="_blank" rel="noopener">ダウンロード</a>
-      <a href="privacy.html">プライバシー</a>
-      <a href="terms.html">利用規約</a>
+      <a href="#gallery">The view</a>
+      <a href="#together">Together</a>
+      <a href="#how">How it works</a>
+      <a href="#passbook">Your journal</a>
+      <a href="https://apps.apple.com/app/id6761459599" target="_blank" rel="noopener">Download</a>
+      <a href="privacy-en.html">Privacy</a>
+      <a href="terms-en.html">Terms</a>
     </div>
-    <div class="dim" style="font-size:.82rem">© 2026 Yutora ・ データは端末とあなたのiCloudの中だけに残ります</div>
+    <div class="dim" style="font-size:.82rem">© 2026 Yutora · Your data stays on your device and in your own iCloud</div>
   </div>
 </footer>
 
@@ -730,7 +709,7 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
   if(!inp)return;
   var wk=document.getElementById('wk'), mo=document.getElementById('mo'),
       yr=document.getElementById('yr'), days=document.getElementById('days'), days2=document.getElementById('days2');
-  function fmt(n){return (n||0).toLocaleString('ja-JP');}
+  function fmt(n){return (n||0).toLocaleString('en-US');}
   function calc(){
     var h=parseFloat(inp.value)||0;
     wk.textContent = fmt(Math.round(h*7));
@@ -746,7 +725,7 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 (function(){
   var el=document.getElementById('collage-title');
   if(!el)return;
-  var titles=['6月の日記','勉強の30日','走った1ヶ月','読み切った10冊','はじめての朝活','ひとりの時間','つくっていた日々','大切な人との旅行'];
+  var titles=['June diary','30 days of studying','A month of running','10 books finished','My first early mornings','Time alone','The days I was making things','A trip with someone I love'];
   var i=0;
   setInterval(function(){
     i=(i+1)%titles.length;
@@ -768,7 +747,8 @@ h1,h2,h3,.statement,.faq summary,.voice blockquote{text-wrap:balance}
 (function(){
   var drafts=document.querySelectorAll('#voices [data-draft="true"]');
   if(drafts.length){
-    console.warn('[Yutora LP] '+drafts.length+' testimonial(s) still marked as draft.');
+    console.warn('[Yutora LP] '+drafts.length+' testimonial(s) still marked as draft. '+
+      'Do not sync to the public clone until permission is granted and data-draft is removed.');
   }
 })();
 
